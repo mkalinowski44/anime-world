@@ -1,0 +1,62 @@
+// Colors
+$colors: (
+   "primary": #2196F3,
+   "primary-light": #6EC6FF,
+   "primary-dark": #0069C0,
+   "secondary": #AB47BC,
+   "secondary-light": #DF78EF,
+   "secondary-dark": #790E8B,
+   "background-light": #F4F4F4,
+   "background-dark": #272727,
+   "font-light": #FFFFFF,
+   "font-dark": #323232,
+   "success": #90FF75,
+   "danger": #F25D5D,
+   "info": #C8ECFC,
+   "dark-transparent": rgba(#000000, 0.44),
+   "dark-transparent2": rgba(#000000, 0.05),
+   "light-transparent": rgba(#FFFFFF, 0.44),
+   "light-transparent2": rgba(#FFFFFF, 0.05),
+   "placeholder-light": #C4C4C4,
+   "placeholder-dark": #5f5f5f,
+);
+
+@function color($color-name) {
+   @if map-has-key($map: $colors, $key: $color-name) {
+      @return map-get($map: $colors, $key: $color-name);
+   }
+   @warn "Unknown `#{$color-name}` in $colors.";
+   @return null;
+}
+
+// Responsive breakpoints
+$breakpoint-xs: 0px;       // 0px - 479px
+$breakpoint-sm: 480px;     // 480px - 767px
+$breakpoint-md: 768px;     // 768px - 1023px
+$breakpoint-lg: 1024px;    // 1024pz - 1199px
+$breakpoint-xl: 1200px;    // 1200px - 1499px
+$breakpoint-xxl: 1500px;   // 1500px ^
+
+// shadows
+$shadow-light: 0px 2px 10px rgba(0, 0, 0, 0.2);
+$shadow-font-light: 2px 1px 2px rgba(0, 0, 0, 0.3);
+$shadow-font-dark: 2px 1px 2px rgba(0, 0, 0, 0.9);;
+$shadow-circle-light: 0px 0px 10px rgba(0, 0, 0, 0.3);;
+
+// waves
+@each $name, $value in $colors {
+   .waves-effect.waves-#{$name} .waves-ripple {
+      background-color: rgba($value, 0.7);
+   }
+}
+
+// color classes
+@each $name, $value in $colors {
+   .#{$name} {
+      background-color: $value;
+
+      &.btn:hover, &.btn:focus{
+         background-color: lighten($value, 10%);
+      }
+   }
+}
