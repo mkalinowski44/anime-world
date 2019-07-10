@@ -29,7 +29,7 @@ function onShowOnce(element, callback) {
    this.scrollEvent = function() {
       if(!this.isShow) {
          this.currentScroll = window.pageYOffset;
-
+         // console.log(this.currentScroll + this.windowHeight + " > " + this.elementPosition);
 
          if(
             this.currentScroll + this.windowHeight > this.elementPosition &&
@@ -49,6 +49,7 @@ function onShowOnce(element, callback) {
    }.bind(this);
 
    this.start = function() {
+      this.scrollEvent();
       this.resizeEvent();
 
       window.addEventListener('resize', this.resizeEvent);

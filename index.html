@@ -1,867 +1,1546 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Home | Anime World</title>
-    <!--(if target dev)><!-->
-    <link rel="stylesheet" href="css/main.css">
-    <!--<!(endif)-->
-    <!--(if target dist)>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Home | Anime World</title>
+      <!--(if target dev)><!-->
+      <link rel="stylesheet" href="css/main.css" />
+      <!--<!(endif)-->
+      <!--(if target dist)>
     <link rel="stylesheet" href="css/main.min.css">
     <!(endif)-->
-  </head>
+   </head>
 
-  <body>
-    <nav>
-      <div class="menu-hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="background"></div>
-      </div>
+   <body>
+      <nav>
+         <div class="menu-hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="background"></div>
+         </div>
 
-      <div class="nav-bar">
-        <div class="home-search">
-          <form action="" method="GET" autocomplete="off" id="nav-search-form">
-            <input
-              data-search="input"
-              type="search"
-              class="browser-default text-normal"
-              placeholder="Szukaj anime..."
-            />
-            <i class="material-icons search-icon">search</i>
-            <i class="material-icons delete-icon hide-el" data-search="reset">close</i>
-            <div class="search-dropdown-container" data-search="dropdown">
-              <div class="search-dropdown">
-                <ul>
-                  <li>
-                    <a
-                      href="#"
-                      class="search-result waves-effect waves-primary-light"
-                    >
-                      <div class="image-col">
-                        <img src="img/berserk.jpg" alt="example" />
-                      </div>
-                      <div class="info-col">
-                        <div class="title-row">
-                          <div class="title">Berserk 2016</div>
-                          <div class="genres">
-                            <span class="badge">Akcja</span>
-                            <span class="badge">Dramat</span>
-                            <span class="badge">Horror</span>
-                          </div>
-                        </div>
-                        <div class="description">
-                          Jeśli ktoś kiedyś pomyślał, że życie potraktowało go
-                          wyjątkowo podle, najpewniej nie znał historii Gutsa.
-                          Mężczyzna przez wplątanie się w działania wielkich i
-                          złych sił w okrutny sposób stracił przyjaciół i część
-                          siebie (dosłownie), a jego kobietę spotkał los
-                          niewiele różniący się od śmierci. Na dodatek został
-                          naznaczony klątwą, która nieustannie ciągnie go ku
-                          przeznaczeniu przegrania z nieczystymi siłami.
-                        </div>
-                        <div class="stats">
-                          Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                          Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                          5.0 <img src="img/Star.png" alt="star" />
-                        </div>
-                      </div>
+         <div class="nav-bar">
+            <div class="home-search">
+               <form
+                  action=""
+                  method="GET"
+                  autocomplete="off"
+                  id="nav-search-form"
+               >
+                  <input
+                     data-search="input"
+                     type="search"
+                     class="browser-default text-normal"
+                     placeholder="Szukaj anime..."
+                  />
+                  <i class="material-icons search-icon">search</i>
+                  <i
+                     class="material-icons delete-icon hide-el"
+                     data-search="reset"
+                     >close</i
+                  >
+                  <div class="search-dropdown-container" data-search="dropdown">
+                     <div class="search-dropdown">
+                        <ul>
+                           <li>
+                              <a
+                                 href="#"
+                                 class="search-result waves-effect waves-primary-light"
+                              >
+                                 <div class="image-col">
+                                    <img src="img/berserk.jpg" alt="example" />
+                                 </div>
+                                 <div class="info-col">
+                                    <div class="title-row">
+                                       <div class="title">Berserk 2016</div>
+                                       <div class="genres">
+                                          <span class="badge">Akcja</span>
+                                          <span class="badge">Dramat</span>
+                                          <span class="badge">Horror</span>
+                                       </div>
+                                    </div>
+                                    <div class="description">
+                                       Jeśli ktoś kiedyś pomyślał, że życie
+                                       potraktowało go wyjątkowo podle,
+                                       najpewniej nie znał historii Gutsa.
+                                       Mężczyzna przez wplątanie się w działania
+                                       wielkich i złych sił w okrutny sposób
+                                       stracił przyjaciół i część siebie
+                                       (dosłownie), a jego kobietę spotkał los
+                                       niewiele różniący się od śmierci. Na
+                                       dodatek został naznaczony klątwą, która
+                                       nieustannie ciągnie go ku przeznaczeniu
+                                       przegrania z nieczystymi siłami.
+                                    </div>
+                                    <div class="stats">
+                                       Napisy:
+                                       <img
+                                          src="img/Pol Flag.png"
+                                          alt="pl_PL"
+                                       />
+                                       Dźwięk:
+                                       <img src="img/Jp Flag.png" alt="jp_JP" />
+                                       5.0 <img src="img/Star.png" alt="star" />
+                                    </div>
+                                 </div>
 
-                      <div class="background"></div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                                 <div class="background"></div>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </form>
             </div>
-          </form>
-        </div>
 
-        <div class="user-panel dropdown-trigger" data-target='user-dropdown'>
-          <div class="name">User</div>
-          <div class="image">
-            <img src="img/profile.png">
-          </div>
-          <div class="material-icons" >arrow_drop_down</div>
-          <div class="background"></div>
-        </div>
-
-        <ul id='user-dropdown' class='dropdown-content'>
-          <li><a href="#!" class="waves-effect waves-primary-light"><i class="material-icons">person</i>Profil</a></li>
-          <li><a href="#!" class="waves-effect waves-primary-light"><i class="material-icons">star_rate</i>Ulubione</a></li>
-          <li><a href="#!" class="waves-effect waves-primary-light"><i class="material-icons">settings</i>Ustawienia</a></li>
-          <li class="divider" tabindex="-1"></li>
-          <li><a href="#!" class="waves-effect waves-primary-light"><i class="material-icons">exit_to_app</i>Wyloguj</a></li>
-        </ul>
-      </div>
-
-      <div class="nav-container">
-        <div class="navigation">
-          <div class="navigation-content">
-            <div class="logo">
-              LOGO
-            </div>
-            <ul class="nav-list">
-              <li>
-                <a href="#" class="waves-effect waves-light">
-                  <i class="material-icons">star</i>
-                  <span>Strona główna</span>
-                </a>
-                <div class="background"></div>
-              </li>
-              <li>
-                <a href="#" class="waves-effect waves-light">
-                  <i class="material-icons">star</i>
-                  <span>Seriale</span>
-                </a>
-                <div class="background"></div>
-              </li>
-              <li>
-                <a href="#" class="waves-effect waves-light">
-                  <i class="material-icons">star</i>
-                  <span>Filmy</span>
-                </a>
-                <div class="background"></div>
-              </li>
-              <li>
-                <a href="#" class="waves-effect waves-light">
-                  <i class="material-icons">star</i>
-                  <span>Gatunki</span>
-                </a>
-                <div class="background"></div>
-              </li>
-              <li>
-                <a href="#" class="waves-effect waves-light">
-                  <i class="material-icons">star</i>
-                  <span>Rankingi</span>
-                </a>
-                <div class="background"></div>
-              </li>
-              <li>
-                <a href="#" class="waves-effect waves-light">
-                  <i class="material-icons">star</i>
-                  <span>Forum</span>
-                </a>
-                <div class="background"></div>
-              </li>
-              <li>
-                <a href="#" class="waves-effect waves-light">
-                  <i class="material-icons">star</i>
-                  <span>Kontakt</span>
-                </a>
-                <div class="background"></div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-close-area"></div>
-    </nav>
-
-    <div class="recent-post-header-container">
-      <div class="recent-post-header">
-        <div class="recent-post-header-content">
-          <div class="header">
-            Ostatnio przesłane
-          </div>
-          <ul class="recent-list">
-            <li>
-              <a href="#" class="recent-header-item waves-effect waves-light">
-                <div class="col-image">
-                  <img src="img/berserk.jpg" alt="example">
-                </div>
-                <div class="info-col">
-                  <div class="title">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="date">Wczoraj o 21:44</div>
-                  <div class="stats">
-                    Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                    Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                  </div>
-                </div>
-                <div class="background"></div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="recent-header-item waves-effect waves-light">
-                <div class="col-image">
-                  <img src="img/berserk.jpg" alt="example">
-                </div>
-                <div class="info-col">
-                  <div class="title">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="date">Wczoraj o 21:44</div>
-                  <div class="stats">
-                    Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                    Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                  </div>
-                </div>
-                <div class="background"></div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="recent-header-item waves-effect waves-light">
-                <div class="col-image">
-                  <img src="img/berserk.jpg" alt="example">
-                </div>
-                <div class="info-col">
-                  <div class="title">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="date">Wczoraj o 21:44</div>
-                  <div class="stats">
-                    Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                    Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                  </div>
-                </div>
-                <div class="background"></div>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="recent-header-item waves-effect waves-light">
-                <div class="col-image">
-                  <img src="img/berserk.jpg" alt="example">
-                </div>
-                <div class="info-col">
-                  <div class="title">
-                    Lorem ipsum dolor sit amet
-                  </div>
-                  <div class="date">Wczoraj o 21:44</div>
-                  <div class="stats">
-                    Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                    Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                  </div>
-                </div>
-                <div class="background"></div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <header class="page-header">
-      <img
-        class="background-image"
-        src="img/anime background.jpg"
-        alt="example"
-      />
-    </header>
-
-    <div class="page-wrapper home">
-      <div class="page-container">
-        <div class="home-search">
-          <form action="" method="GET" autocomplete="off" id="search-form">
-            <input
-              data-search="input"
-              type="search"
-              class="browser-default text-normal"
-              placeholder="Szukaj anime..."
-            />
-            <i class="material-icons search-icon">search</i>
-            <i class="material-icons delete-icon hide-el" data-search="reset"
-              >close</i
+            <div
+               class="user-panel dropdown-trigger"
+               data-target="user-dropdown"
             >
-            <div class="search-dropdown-container" data-search="dropdown">
-              <div class="search-dropdown">
-                <ul>
-                  <li>
-                    <a
-                      href="#"
-                      class="search-result waves-effect waves-primary-light"
-                    >
-                      <div class="image-col">
-                        <img src="img/berserk.jpg" alt="example" />
-                      </div>
-                      <div class="info-col">
-                        <div class="title-row">
-                          <div class="title">Berserk 2016</div>
-                          <div class="genres">
-                            <span class="badge">Akcja</span>
-                            <span class="badge">Dramat</span>
-                            <span class="badge">Horror</span>
-                          </div>
-                        </div>
-                        <div class="description">
-                          Jeśli ktoś kiedyś pomyślał, że życie potraktowało go
-                          wyjątkowo podle, najpewniej nie znał historii Gutsa.
-                          Mężczyzna przez wplątanie się w działania wielkich i
-                          złych sił w okrutny sposób stracił przyjaciół i część
-                          siebie (dosłownie), a jego kobietę spotkał los
-                          niewiele różniący się od śmierci. Na dodatek został
-                          naznaczony klątwą, która nieustannie ciągnie go ku
-                          przeznaczeniu przegrania z nieczystymi siłami.
-                        </div>
-                        <div class="stats">
-                          Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                          Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                          5.0 <img src="img/Star.png" alt="star" />
-                        </div>
-                      </div>
-
-                      <div class="background"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="search-result waves-effect waves-primary-light"
-                    >
-                      <div class="image-col">
-                        <img src="img/berserk.jpg" alt="example" />
-                      </div>
-                      <div class="info-col">
-                        <div class="title-row">
-                          <div class="title">Berserk 2016</div>
-                          <div class="genres">
-                            <span class="badge">Akcja</span>
-                            <span class="badge">Dramat</span>
-                            <span class="badge">Horror</span>
-                          </div>
-                        </div>
-                        <div class="description">
-                          Jeśli ktoś kiedyś pomyślał, że życie potraktowało go
-                          wyjątkowo podle, najpewniej nie znał historii Gutsa.
-                          Mężczyzna przez wplątanie się w działania wielkich i
-                          złych sił w okrutny sposób stracił przyjaciół i część
-                          siebie (dosłownie), a jego kobietę spotkał los
-                          niewiele różniący się od śmierci. Na dodatek został
-                          naznaczony klątwą, która nieustannie ciągnie go ku
-                          przeznaczeniu przegrania z nieczystymi siłami.
-                        </div>
-                        <div class="stats">
-                          Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                          Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                          5.0 <img src="img/Star.png" alt="star" />
-                        </div>
-                      </div>
-
-                      <div class="background"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="search-result waves-effect waves-primary-light"
-                    >
-                      <div class="image-col">
-                        <img src="img/berserk.jpg" alt="example" />
-                      </div>
-                      <div class="info-col">
-                        <div class="title-row">
-                          <div class="title">Berserk 2016</div>
-                          <div class="genres">
-                            <span class="badge">Akcja</span>
-                            <span class="badge">Dramat</span>
-                            <span class="badge">Horror</span>
-                          </div>
-                        </div>
-                        <div class="description">
-                          Jeśli ktoś kiedyś pomyślał, że życie potraktowało go
-                          wyjątkowo podle, najpewniej nie znał historii Gutsa.
-                          Mężczyzna przez wplątanie się w działania wielkich i
-                          złych sił w okrutny sposób stracił przyjaciół i część
-                          siebie (dosłownie), a jego kobietę spotkał los
-                          niewiele różniący się od śmierci. Na dodatek został
-                          naznaczony klątwą, która nieustannie ciągnie go ku
-                          przeznaczeniu przegrania z nieczystymi siłami.
-                        </div>
-                        <div class="stats">
-                          Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                          Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                          5.0 <img src="img/Star.png" alt="star" />
-                        </div>
-                      </div>
-
-                      <div class="background"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="search-result waves-effect waves-primary-light"
-                    >
-                      <div class="image-col">
-                        <img src="img/berserk.jpg" alt="example" />
-                      </div>
-                      <div class="info-col">
-                        <div class="title-row">
-                          <div class="title">Berserk 2016</div>
-                          <div class="genres">
-                            <span class="badge">Akcja</span>
-                            <span class="badge">Dramat</span>
-                            <span class="badge">Horror</span>
-                          </div>
-                        </div>
-                        <div class="description">
-                          Jeśli ktoś kiedyś pomyślał, że życie potraktowało go
-                          wyjątkowo podle, najpewniej nie znał historii Gutsa.
-                          Mężczyzna przez wplątanie się w działania wielkich i
-                          złych sił w okrutny sposób stracił przyjaciół i część
-                          siebie (dosłownie), a jego kobietę spotkał los
-                          niewiele różniący się od śmierci. Na dodatek został
-                          naznaczony klątwą, która nieustannie ciągnie go ku
-                          przeznaczeniu przegrania z nieczystymi siłami.
-                        </div>
-                        <div class="stats">
-                          Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                          Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                          5.0 <img src="img/Star.png" alt="star" />
-                        </div>
-                      </div>
-
-                      <div class="background"></div>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="search-result waves-effect waves-primary-light"
-                    >
-                      <div class="image-col">
-                        <img src="img/berserk.jpg" alt="example" />
-                      </div>
-                      <div class="info-col">
-                        <div class="title-row">
-                          <div class="title">Berserk 2016</div>
-                          <div class="genres">
-                            <span class="badge">Akcja</span>
-                            <span class="badge">Dramat</span>
-                            <span class="badge">Horror</span>
-                          </div>
-                        </div>
-                        <div class="description">
-                          Jeśli ktoś kiedyś pomyślał, że życie potraktowało go
-                          wyjątkowo podle, najpewniej nie znał historii Gutsa.
-                          Mężczyzna przez wplątanie się w działania wielkich i
-                          złych sił w okrutny sposób stracił przyjaciół i część
-                          siebie (dosłownie), a jego kobietę spotkał los
-                          niewiele różniący się od śmierci. Na dodatek został
-                          naznaczony klątwą, która nieustannie ciągnie go ku
-                          przeznaczeniu przegrania z nieczystymi siłami.
-                        </div>
-                        <div class="stats">
-                          Napisy: <img src="img/Pol Flag.png" alt="pl_PL" />
-                          Dźwięk: <img src="img/Jp Flag.png" alt="jp_JP" />
-                          5.0 <img src="img/Star.png" alt="star" />
-                        </div>
-                      </div>
-
-                      <div class="background"></div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+               <div class="name">User</div>
+               <div class="image">
+                  <img src="img/profile.png" />
+               </div>
+               <div class="material-icons">arrow_drop_down</div>
+               <div class="background"></div>
             </div>
-          </form>
-        </div>
-        <div class="home-search-spacer"></div>
 
-        <h1>Polecane</h1>
-        <div class="small-separator"></div>
+            <ul id="user-dropdown" class="dropdown-content">
+               <li>
+                  <a href="#!" class="waves-effect waves-primary-light"
+                     ><i class="material-icons">person</i>Profil</a
+                  >
+               </li>
+               <li>
+                  <a href="#!" class="waves-effect waves-primary-light"
+                     ><i class="material-icons">star_rate</i>Ulubione</a
+                  >
+               </li>
+               <li>
+                  <a href="#!" class="waves-effect waves-primary-light"
+                     ><i class="material-icons">settings</i>Ustawienia</a
+                  >
+               </li>
+               <li class="divider" tabindex="-1"></li>
+               <li>
+                  <a href="#!" class="waves-effect waves-primary-light"
+                     ><i class="material-icons">exit_to_app</i>Wyloguj</a
+                  >
+               </li>
+            </ul>
+         </div>
 
-        <div class="slick-slider" id="home-slider">
-          <div class="background">
-            <div class="slider-site">
-                <img src="img/slider background.png" alt="">
-            </div>
-            <div class="slider-site">
-              <img src="img/anime background.jpg" alt="">
-            </div>
-            <div class="slider-site">
-              <img src="img/berserk.jpg" alt="">
-            </div>
-          </div>
-
-          <div class="content">
-            <div>
-              <div class="slider-site">
-                <div class="text">
-                    <div class="text-big">
-                        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                    </div>
-                    <div class="separator"></div>
-                    <div class="text-normal">
-                        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                    </div>
-                </div>
-                <a class="waves-effect waves-light btn-large primary">Button</a>
-              </div>
-            </div>
-            <div>
-              <div class="slider-site">
-                  <div class="text">
-                      <div class="text-big">
-                          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                      </div>
-                      <div class="separator"></div>
-                      <div class="text-normal">
-                          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                      </div>
+         <div class="nav-container">
+            <div class="navigation">
+               <div class="navigation-content">
+                  <div class="logo">
+                     LOGO
                   </div>
-                  <a class="waves-effect waves-light btn-large primary">Button</a>
-              </div>
+                  <ul class="nav-list">
+                     <li>
+                        <a href="#" class="waves-effect waves-light">
+                           <i class="material-icons">star</i>
+                           <span>Strona główna</span>
+                        </a>
+                        <div class="background"></div>
+                     </li>
+                     <li>
+                        <a href="#" class="waves-effect waves-light">
+                           <i class="material-icons">star</i>
+                           <span>Seriale</span>
+                        </a>
+                        <div class="background"></div>
+                     </li>
+                     <li>
+                        <a href="#" class="waves-effect waves-light">
+                           <i class="material-icons">star</i>
+                           <span>Filmy</span>
+                        </a>
+                        <div class="background"></div>
+                     </li>
+                     <li>
+                        <a href="#" class="waves-effect waves-light">
+                           <i class="material-icons">star</i>
+                           <span>Gatunki</span>
+                        </a>
+                        <div class="background"></div>
+                     </li>
+                     <li>
+                        <a href="#" class="waves-effect waves-light">
+                           <i class="material-icons">star</i>
+                           <span>Rankingi</span>
+                        </a>
+                        <div class="background"></div>
+                     </li>
+                     <li>
+                        <a href="#" class="waves-effect waves-light">
+                           <i class="material-icons">star</i>
+                           <span>Forum</span>
+                        </a>
+                        <div class="background"></div>
+                     </li>
+                     <li>
+                        <a href="#" class="waves-effect waves-light">
+                           <i class="material-icons">star</i>
+                           <span>Kontakt</span>
+                        </a>
+                        <div class="background"></div>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <div>
-              <div class="slider-site">
-                  <div class="text">
-                      <div class="text-big">
-                          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                      </div>
-                      <div class="separator"></div>
-                      <div class="text-normal">
-                          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-                      </div>
+         </div>
+
+         <div class="nav-close-area"></div>
+      </nav>
+
+      <div class="recent-post-header-container">
+         <div class="recent-post-header">
+            <div class="recent-post-header-content">
+               <div class="header">
+                  Ostatnio przesłane
+               </div>
+               <ul class="recent-list">
+                  <li>
+                     <a
+                        href="#"
+                        class="recent-header-item waves-effect waves-light"
+                     >
+                        <div class="col-image">
+                           <img src="img/berserk.jpg" alt="example" />
+                        </div>
+                        <div class="info-col">
+                           <div class="title">
+                              Lorem ipsum dolor sit amet
+                           </div>
+                           <div class="date">Wczoraj o 21:44</div>
+                           <div class="stats">
+                              Napisy:
+                              <img src="img/Pol Flag.png" alt="pl_PL" /> Dźwięk:
+                              <img src="img/Jp Flag.png" alt="jp_JP" />
+                           </div>
+                        </div>
+                        <div class="background"></div>
+                     </a>
+                  </li>
+                  <li>
+                     <a
+                        href="#"
+                        class="recent-header-item waves-effect waves-light"
+                     >
+                        <div class="col-image">
+                           <img src="img/berserk.jpg" alt="example" />
+                        </div>
+                        <div class="info-col">
+                           <div class="title">
+                              Lorem ipsum dolor sit amet
+                           </div>
+                           <div class="date">Wczoraj o 21:44</div>
+                           <div class="stats">
+                              Napisy:
+                              <img src="img/Pol Flag.png" alt="pl_PL" /> Dźwięk:
+                              <img src="img/Jp Flag.png" alt="jp_JP" />
+                           </div>
+                        </div>
+                        <div class="background"></div>
+                     </a>
+                  </li>
+                  <li>
+                     <a
+                        href="#"
+                        class="recent-header-item waves-effect waves-light"
+                     >
+                        <div class="col-image">
+                           <img src="img/berserk.jpg" alt="example" />
+                        </div>
+                        <div class="info-col">
+                           <div class="title">
+                              Lorem ipsum dolor sit amet
+                           </div>
+                           <div class="date">Wczoraj o 21:44</div>
+                           <div class="stats">
+                              Napisy:
+                              <img src="img/Pol Flag.png" alt="pl_PL" /> Dźwięk:
+                              <img src="img/Jp Flag.png" alt="jp_JP" />
+                           </div>
+                        </div>
+                        <div class="background"></div>
+                     </a>
+                  </li>
+                  <li>
+                     <a
+                        href="#"
+                        class="recent-header-item waves-effect waves-light"
+                     >
+                        <div class="col-image">
+                           <img src="img/berserk.jpg" alt="example" />
+                        </div>
+                        <div class="info-col">
+                           <div class="title">
+                              Lorem ipsum dolor sit amet
+                           </div>
+                           <div class="date">Wczoraj o 21:44</div>
+                           <div class="stats">
+                              Napisy:
+                              <img src="img/Pol Flag.png" alt="pl_PL" /> Dźwięk:
+                              <img src="img/Jp Flag.png" alt="jp_JP" />
+                           </div>
+                        </div>
+                        <div class="background"></div>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
+      <header class="page-header">
+         <img
+            class="background-image"
+            src="img/anime background.jpg"
+            alt="example"
+         />
+      </header>
+
+      <div class="page-wrapper home">
+         <div class="page-container">
+            <div class="home-search">
+               <form action="" method="GET" autocomplete="off" id="search-form">
+                  <input
+                     data-search="input"
+                     type="search"
+                     class="browser-default text-normal"
+                     placeholder="Szukaj anime..."
+                  />
+                  <i class="material-icons search-icon">search</i>
+                  <i
+                     class="material-icons delete-icon hide-el"
+                     data-search="reset"
+                     >close</i
+                  >
+                  <div class="search-dropdown-container" data-search="dropdown">
+                     <div class="search-dropdown">
+                        <ul>
+                           <li>
+                              <a
+                                 href="#"
+                                 class="search-result waves-effect waves-primary-light"
+                              >
+                                 <div class="image-col">
+                                    <img src="img/berserk.jpg" alt="example" />
+                                 </div>
+                                 <div class="info-col">
+                                    <div class="title-row">
+                                       <div class="title">Berserk 2016</div>
+                                       <div class="genres">
+                                          <span class="badge">Akcja</span>
+                                          <span class="badge">Dramat</span>
+                                          <span class="badge">Horror</span>
+                                       </div>
+                                    </div>
+                                    <div class="description">
+                                       Jeśli ktoś kiedyś pomyślał, że życie
+                                       potraktowało go wyjątkowo podle,
+                                       najpewniej nie znał historii Gutsa.
+                                       Mężczyzna przez wplątanie się w działania
+                                       wielkich i złych sił w okrutny sposób
+                                       stracił przyjaciół i część siebie
+                                       (dosłownie), a jego kobietę spotkał los
+                                       niewiele różniący się od śmierci. Na
+                                       dodatek został naznaczony klątwą, która
+                                       nieustannie ciągnie go ku przeznaczeniu
+                                       przegrania z nieczystymi siłami.
+                                    </div>
+                                    <div class="stats">
+                                       Napisy:
+                                       <img
+                                          src="img/Pol Flag.png"
+                                          alt="pl_PL"
+                                       />
+                                       Dźwięk:
+                                       <img src="img/Jp Flag.png" alt="jp_JP" />
+                                       5.0 <img src="img/Star.png" alt="star" />
+                                    </div>
+                                 </div>
+
+                                 <div class="background"></div>
+                              </a>
+                           </li>
+                           <li>
+                              <a
+                                 href="#"
+                                 class="search-result waves-effect waves-primary-light"
+                              >
+                                 <div class="image-col">
+                                    <img src="img/berserk.jpg" alt="example" />
+                                 </div>
+                                 <div class="info-col">
+                                    <div class="title-row">
+                                       <div class="title">Berserk 2016</div>
+                                       <div class="genres">
+                                          <span class="badge">Akcja</span>
+                                          <span class="badge">Dramat</span>
+                                          <span class="badge">Horror</span>
+                                       </div>
+                                    </div>
+                                    <div class="description">
+                                       Jeśli ktoś kiedyś pomyślał, że życie
+                                       potraktowało go wyjątkowo podle,
+                                       najpewniej nie znał historii Gutsa.
+                                       Mężczyzna przez wplątanie się w działania
+                                       wielkich i złych sił w okrutny sposób
+                                       stracił przyjaciół i część siebie
+                                       (dosłownie), a jego kobietę spotkał los
+                                       niewiele różniący się od śmierci. Na
+                                       dodatek został naznaczony klątwą, która
+                                       nieustannie ciągnie go ku przeznaczeniu
+                                       przegrania z nieczystymi siłami.
+                                    </div>
+                                    <div class="stats">
+                                       Napisy:
+                                       <img
+                                          src="img/Pol Flag.png"
+                                          alt="pl_PL"
+                                       />
+                                       Dźwięk:
+                                       <img src="img/Jp Flag.png" alt="jp_JP" />
+                                       5.0 <img src="img/Star.png" alt="star" />
+                                    </div>
+                                 </div>
+
+                                 <div class="background"></div>
+                              </a>
+                           </li>
+                           <li>
+                              <a
+                                 href="#"
+                                 class="search-result waves-effect waves-primary-light"
+                              >
+                                 <div class="image-col">
+                                    <img src="img/berserk.jpg" alt="example" />
+                                 </div>
+                                 <div class="info-col">
+                                    <div class="title-row">
+                                       <div class="title">Berserk 2016</div>
+                                       <div class="genres">
+                                          <span class="badge">Akcja</span>
+                                          <span class="badge">Dramat</span>
+                                          <span class="badge">Horror</span>
+                                       </div>
+                                    </div>
+                                    <div class="description">
+                                       Jeśli ktoś kiedyś pomyślał, że życie
+                                       potraktowało go wyjątkowo podle,
+                                       najpewniej nie znał historii Gutsa.
+                                       Mężczyzna przez wplątanie się w działania
+                                       wielkich i złych sił w okrutny sposób
+                                       stracił przyjaciół i część siebie
+                                       (dosłownie), a jego kobietę spotkał los
+                                       niewiele różniący się od śmierci. Na
+                                       dodatek został naznaczony klątwą, która
+                                       nieustannie ciągnie go ku przeznaczeniu
+                                       przegrania z nieczystymi siłami.
+                                    </div>
+                                    <div class="stats">
+                                       Napisy:
+                                       <img
+                                          src="img/Pol Flag.png"
+                                          alt="pl_PL"
+                                       />
+                                       Dźwięk:
+                                       <img src="img/Jp Flag.png" alt="jp_JP" />
+                                       5.0 <img src="img/Star.png" alt="star" />
+                                    </div>
+                                 </div>
+
+                                 <div class="background"></div>
+                              </a>
+                           </li>
+                           <li>
+                              <a
+                                 href="#"
+                                 class="search-result waves-effect waves-primary-light"
+                              >
+                                 <div class="image-col">
+                                    <img src="img/berserk.jpg" alt="example" />
+                                 </div>
+                                 <div class="info-col">
+                                    <div class="title-row">
+                                       <div class="title">Berserk 2016</div>
+                                       <div class="genres">
+                                          <span class="badge">Akcja</span>
+                                          <span class="badge">Dramat</span>
+                                          <span class="badge">Horror</span>
+                                       </div>
+                                    </div>
+                                    <div class="description">
+                                       Jeśli ktoś kiedyś pomyślał, że życie
+                                       potraktowało go wyjątkowo podle,
+                                       najpewniej nie znał historii Gutsa.
+                                       Mężczyzna przez wplątanie się w działania
+                                       wielkich i złych sił w okrutny sposób
+                                       stracił przyjaciół i część siebie
+                                       (dosłownie), a jego kobietę spotkał los
+                                       niewiele różniący się od śmierci. Na
+                                       dodatek został naznaczony klątwą, która
+                                       nieustannie ciągnie go ku przeznaczeniu
+                                       przegrania z nieczystymi siłami.
+                                    </div>
+                                    <div class="stats">
+                                       Napisy:
+                                       <img
+                                          src="img/Pol Flag.png"
+                                          alt="pl_PL"
+                                       />
+                                       Dźwięk:
+                                       <img src="img/Jp Flag.png" alt="jp_JP" />
+                                       5.0 <img src="img/Star.png" alt="star" />
+                                    </div>
+                                 </div>
+
+                                 <div class="background"></div>
+                              </a>
+                           </li>
+                           <li>
+                              <a
+                                 href="#"
+                                 class="search-result waves-effect waves-primary-light"
+                              >
+                                 <div class="image-col">
+                                    <img src="img/berserk.jpg" alt="example" />
+                                 </div>
+                                 <div class="info-col">
+                                    <div class="title-row">
+                                       <div class="title">Berserk 2016</div>
+                                       <div class="genres">
+                                          <span class="badge">Akcja</span>
+                                          <span class="badge">Dramat</span>
+                                          <span class="badge">Horror</span>
+                                       </div>
+                                    </div>
+                                    <div class="description">
+                                       Jeśli ktoś kiedyś pomyślał, że życie
+                                       potraktowało go wyjątkowo podle,
+                                       najpewniej nie znał historii Gutsa.
+                                       Mężczyzna przez wplątanie się w działania
+                                       wielkich i złych sił w okrutny sposób
+                                       stracił przyjaciół i część siebie
+                                       (dosłownie), a jego kobietę spotkał los
+                                       niewiele różniący się od śmierci. Na
+                                       dodatek został naznaczony klątwą, która
+                                       nieustannie ciągnie go ku przeznaczeniu
+                                       przegrania z nieczystymi siłami.
+                                    </div>
+                                    <div class="stats">
+                                       Napisy:
+                                       <img
+                                          src="img/Pol Flag.png"
+                                          alt="pl_PL"
+                                       />
+                                       Dźwięk:
+                                       <img src="img/Jp Flag.png" alt="jp_JP" />
+                                       5.0 <img src="img/Star.png" alt="star" />
+                                    </div>
+                                 </div>
+
+                                 <div class="background"></div>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
                   </div>
-                  <a class="waves-effect waves-light btn-large primary">Button</a>
-              </div>
+               </form>
             </div>
-          </div>
-        </div>
+            <div class="home-search-spacer"></div>
 
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus,
-          eius id facilis itaque possimus tempore aliquid aspernatur iure beatae
-          accusantium, officiis repellendus ab sequi ratione unde nemo esse
-          obcaecati nostrum alias rem? Odit impedit ullam obcaecati aperiam quod
-          dolorem nihil sed aut quia quae! Voluptas eveniet reprehenderit magni
-          aut, rem eligendi pariatur saepe doloremque, consectetur dolorem amet
-          minima culpa impedit ipsum odit necessitatibus inventore expedita vel
-          blanditiis? Deleniti temporibus nihil rem quas, accusamus debitis at
-          excepturi perferendis nam soluta aut incidunt illo consequuntur sed
-          natus quibusdam distinctio, explicabo esse ipsum, repudiandae suscipit
-          blanditiis recusandae doloribus maiores. Maiores officia repudiandae
-          et, beatae voluptates sunt labore commodi consectetur quidem expedita
-          modi similique rem itaque qui quasi perspiciatis quae ea omnis.
-          Laborum impedit rerum nisi ab. Praesentium similique at fuga?
-          Dignissimos nostrum cupiditate enim nam corrupti fuga laboriosam, unde
-          ab soluta. Unde est delectus, ratione sit voluptas exercitationem
-          cupiditate eveniet at eius dolore odit. Assumenda unde, soluta rem
-          porro, consequuntur nisi tempora, alias facere incidunt fuga natus
-          officiis rerum odio distinctio nesciunt. Delectus, eum quis.
-          Exercitationem, aut praesentium! Unde quo eos illum quisquam,
-          architecto nesciunt omnis molestiae in rem repudiandae neque corrupti,
-          officia aperiam odit consectetur modi voluptatem asperiores
-          voluptatum, velit saepe! Minus nisi explicabo blanditiis! Harum
-          quibusdam rem mollitia aut odio? Quisquam incidunt eveniet,
-          perferendis deleniti doloribus veniam voluptate iure quasi atque nisi
-          obcaecati unde aliquam explicabo similique amet possimus nihil
-          necessitatibus accusamus harum totam. Iusto ipsum quidem rem nihil
-          vitae ipsam illo dolor nulla provident maxime, impedit voluptate quas
-          nisi? Velit perspiciatis nisi molestias adipisci quia totam itaque
-          quidem recusandae rerum voluptas tenetur sapiente sit ratione,
-          voluptatibus dolores eum delectus, consectetur amet dolorum ullam a
-          praesentium. Enim expedita esse voluptatem impedit officiis aliquid
-          cupiditate id distinctio! Eveniet harum culpa neque libero aperiam
-          sint doloribus delectus sequi ipsum natus. Sequi, cum neque! Nulla
-          quam non cum ipsa vitae adipisci autem voluptates modi, ex quis in
-          distinctio obcaecati expedita eaque odio delectus porro? In nihil
-          praesentium magni quam? Ullam natus atque laborum molestias dolorum
-          debitis voluptatem ipsam aperiam. Nihil alias voluptatum cumque eius
-          repudiandae error consequuntur maxime, vel aut tempora. Blanditiis
-          praesentium optio consectetur possimus laudantium asperiores eaque
-          vitae tempore repudiandae voluptatum beatae corporis, repellendus
-          nulla doloremque assumenda! Voluptatibus harum minima illo facere!
-          Asperiores itaque dolores, nostrum sed, nulla quidem sint veniam
-          inventore doloremque fuga assumenda aliquid voluptate consequuntur eum
-          reiciendis amet eius eaque quisquam recusandae libero labore neque.
-          Iste voluptatum eveniet numquam!
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus,
-          eius id facilis itaque possimus tempore aliquid aspernatur iure beatae
-          accusantium, officiis repellendus ab sequi ratione unde nemo esse
-          obcaecati nostrum alias rem? Odit impedit ullam obcaecati aperiam quod
-          dolorem nihil sed aut quia quae! Voluptas eveniet reprehenderit magni
-          aut, rem eligendi pariatur saepe doloremque, consectetur dolorem amet
-          minima culpa impedit ipsum odit necessitatibus inventore expedita vel
-          blanditiis? Deleniti temporibus nihil rem quas, accusamus debitis at
-          excepturi perferendis nam soluta aut incidunt illo consequuntur sed
-          natus quibusdam distinctio, explicabo esse ipsum, repudiandae suscipit
-          blanditiis recusandae doloribus maiores. Maiores officia repudiandae
-          et, beatae voluptates sunt labore commodi consectetur quidem expedita
-          modi similique rem itaque qui quasi perspiciatis quae ea omnis.
-          Laborum impedit rerum nisi ab. Praesentium similique at fuga?
-          Dignissimos nostrum cupiditate enim nam corrupti fuga laboriosam, unde
-          ab soluta. Unde est delectus, ratione sit voluptas exercitationem
-          cupiditate eveniet at eius dolore odit. Assumenda unde, soluta rem
-          porro, consequuntur nisi tempora, alias facere incidunt fuga natus
-          officiis rerum odio distinctio nesciunt. Delectus, eum quis.
-          Exercitationem, aut praesentium! Unde quo eos illum quisquam,
-          architecto nesciunt omnis molestiae in rem repudiandae neque corrupti,
-          officia aperiam odit consectetur modi voluptatem asperiores
-          voluptatum, velit saepe! Minus nisi explicabo blanditiis! Harum
-          quibusdam rem mollitia aut odio? Quisquam incidunt eveniet,
-          perferendis deleniti doloribus veniam voluptate iure quasi atque nisi
-          obcaecati unde aliquam explicabo similique amet possimus nihil
-          necessitatibus accusamus harum totam. Iusto ipsum quidem rem nihil
-          vitae ipsam illo dolor nulla provident maxime, impedit voluptate quas
-          nisi? Velit perspiciatis nisi molestias adipisci quia totam itaque
-          quidem recusandae rerum voluptas tenetur sapiente sit ratione,
-          voluptatibus dolores eum delectus, consectetur amet dolorum ullam a
-          praesentium. Enim expedita esse voluptatem impedit officiis aliquid
-          cupiditate id distinctio! Eveniet harum culpa neque libero aperiam
-          sint doloribus delectus sequi ipsum natus. Sequi, cum neque! Nulla
-          quam non cum ipsa vitae adipisci autem voluptates modi, ex quis in
-          distinctio obcaecati expedita eaque odio delectus porro? In nihil
-          praesentium magni quam? Ullam natus atque laborum molestias dolorum
-          debitis voluptatem ipsam aperiam. Nihil alias voluptatum cumque eius
-          repudiandae error consequuntur maxime, vel aut tempora. Blanditiis
-          praesentium optio consectetur possimus laudantium asperiores eaque
-          vitae tempore repudiandae voluptatum beatae corporis, repellendus
-          nulla doloremque assumenda! Voluptatibus harum minima illo facere!
-          Asperiores itaque dolores, nostrum sed, nulla quidem sint veniam
-          inventore doloremque fuga assumenda aliquid voluptate consequuntur eum
-          reiciendis amet eius eaque quisquam recusandae libero labore neque.
-          Iste voluptatum eveniet numquam!
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus,
-          eius id facilis itaque possimus tempore aliquid aspernatur iure beatae
-          accusantium, officiis repellendus ab sequi ratione unde nemo esse
-          obcaecati nostrum alias rem? Odit impedit ullam obcaecati aperiam quod
-          dolorem nihil sed aut quia quae! Voluptas eveniet reprehenderit magni
-          aut, rem eligendi pariatur saepe doloremque, consectetur dolorem amet
-          minima culpa impedit ipsum odit necessitatibus inventore expedita vel
-          blanditiis? Deleniti temporibus nihil rem quas, accusamus debitis at
-          excepturi perferendis nam soluta aut incidunt illo consequuntur sed
-          natus quibusdam distinctio, explicabo esse ipsum, repudiandae suscipit
-          blanditiis recusandae doloribus maiores. Maiores officia repudiandae
-          et, beatae voluptates sunt labore commodi consectetur quidem expedita
-          modi similique rem itaque qui quasi perspiciatis quae ea omnis.
-          Laborum impedit rerum nisi ab. Praesentium similique at fuga?
-          Dignissimos nostrum cupiditate enim nam corrupti fuga laboriosam, unde
-          ab soluta. Unde est delectus, ratione sit voluptas exercitationem
-          cupiditate eveniet at eius dolore odit. Assumenda unde, soluta rem
-          porro, consequuntur nisi tempora, alias facere incidunt fuga natus
-          officiis rerum odio distinctio nesciunt. Delectus, eum quis.
-          Exercitationem, aut praesentium! Unde quo eos illum quisquam,
-          architecto nesciunt omnis molestiae in rem repudiandae neque corrupti,
-          officia aperiam odit consectetur modi voluptatem asperiores
-          voluptatum, velit saepe! Minus nisi explicabo blanditiis! Harum
-          quibusdam rem mollitia aut odio? Quisquam incidunt eveniet,
-          perferendis deleniti doloribus veniam voluptate iure quasi atque nisi
-          obcaecati unde aliquam explicabo similique amet possimus nihil
-          necessitatibus accusamus harum totam. Iusto ipsum quidem rem nihil
-          vitae ipsam illo dolor nulla provident maxime, impedit voluptate quas
-          nisi? Velit perspiciatis nisi molestias adipisci quia totam itaque
-          quidem recusandae rerum voluptas tenetur sapiente sit ratione,
-          voluptatibus dolores eum delectus, consectetur amet dolorum ullam a
-          praesentium. Enim expedita esse voluptatem impedit officiis aliquid
-          cupiditate id distinctio! Eveniet harum culpa neque libero aperiam
-          sint doloribus delectus sequi ipsum natus. Sequi, cum neque! Nulla
-          quam non cum ipsa vitae adipisci autem voluptates modi, ex quis in
-          distinctio obcaecati expedita eaque odio delectus porro? In nihil
-          praesentium magni quam? Ullam natus atque laborum molestias dolorum
-          debitis voluptatem ipsam aperiam. Nihil alias voluptatum cumque eius
-          repudiandae error consequuntur maxime, vel aut tempora. Blanditiis
-          praesentium optio consectetur possimus laudantium asperiores eaque
-          vitae tempore repudiandae voluptatum beatae corporis, repellendus
-          nulla doloremque assumenda! Voluptatibus harum minima illo facere!
-          Asperiores itaque dolores, nostrum sed, nulla quidem sint veniam
-          inventore doloremque fuga assumenda aliquid voluptate consequuntur eum
-          reiciendis amet eius eaque quisquam recusandae libero labore neque.
-          Iste voluptatum eveniet numquam!
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus,
-          eius id facilis itaque possimus tempore aliquid aspernatur iure beatae
-          accusantium, officiis repellendus ab sequi ratione unde nemo esse
-          obcaecati nostrum alias rem? Odit impedit ullam obcaecati aperiam quod
-          dolorem nihil sed aut quia quae! Voluptas eveniet reprehenderit magni
-          aut, rem eligendi pariatur saepe doloremque, consectetur dolorem amet
-          minima culpa impedit ipsum odit necessitatibus inventore expedita vel
-          blanditiis? Deleniti temporibus nihil rem quas, accusamus debitis at
-          excepturi perferendis nam soluta aut incidunt illo consequuntur sed
-          natus quibusdam distinctio, explicabo esse ipsum, repudiandae suscipit
-          blanditiis recusandae doloribus maiores. Maiores officia repudiandae
-          et, beatae voluptates sunt labore commodi consectetur quidem expedita
-          modi similique rem itaque qui quasi perspiciatis quae ea omnis.
-          Laborum impedit rerum nisi ab. Praesentium similique at fuga?
-          Dignissimos nostrum cupiditate enim nam corrupti fuga laboriosam, unde
-          ab soluta. Unde est delectus, ratione sit voluptas exercitationem
-          cupiditate eveniet at eius dolore odit. Assumenda unde, soluta rem
-          porro, consequuntur nisi tempora, alias facere incidunt fuga natus
-          officiis rerum odio distinctio nesciunt. Delectus, eum quis.
-          Exercitationem, aut praesentium! Unde quo eos illum quisquam,
-          architecto nesciunt omnis molestiae in rem repudiandae neque corrupti,
-          officia aperiam odit consectetur modi voluptatem asperiores
-          voluptatum, velit saepe! Minus nisi explicabo blanditiis! Harum
-          quibusdam rem mollitia aut odio? Quisquam incidunt eveniet,
-          perferendis deleniti doloribus veniam voluptate iure quasi atque nisi
-          obcaecati unde aliquam explicabo similique amet possimus nihil
-          necessitatibus accusamus harum totam. Iusto ipsum quidem rem nihil
-          vitae ipsam illo dolor nulla provident maxime, impedit voluptate quas
-          nisi? Velit perspiciatis nisi molestias adipisci quia totam itaque
-          quidem recusandae rerum voluptas tenetur sapiente sit ratione,
-          voluptatibus dolores eum delectus, consectetur amet dolorum ullam a
-          praesentium. Enim expedita esse voluptatem impedit officiis aliquid
-          cupiditate id distinctio! Eveniet harum culpa neque libero aperiam
-          sint doloribus delectus sequi ipsum natus. Sequi, cum neque! Nulla
-          quam non cum ipsa vitae adipisci autem voluptates modi, ex quis in
-          distinctio obcaecati expedita eaque odio delectus porro? In nihil
-          praesentium magni quam? Ullam natus atque laborum molestias dolorum
-          debitis voluptatem ipsam aperiam. Nihil alias voluptatum cumque eius
-          repudiandae error consequuntur maxime, vel aut tempora. Blanditiis
-          praesentium optio consectetur possimus laudantium asperiores eaque
-          vitae tempore repudiandae voluptatum beatae corporis, repellendus
-          nulla doloremque assumenda! Voluptatibus harum minima illo facere!
-          Asperiores itaque dolores, nostrum sed, nulla quidem sint veniam
-          inventore doloremque fuga assumenda aliquid voluptate consequuntur eum
-          reiciendis amet eius eaque quisquam recusandae libero labore neque.
-          Iste voluptatum eveniet numquam!
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus,
-          eius id facilis itaque possimus tempore aliquid aspernatur iure beatae
-          accusantium, officiis repellendus ab sequi ratione unde nemo esse
-          obcaecati nostrum alias rem? Odit impedit ullam obcaecati aperiam quod
-          dolorem nihil sed aut quia quae! Voluptas eveniet reprehenderit magni
-          aut, rem eligendi pariatur saepe doloremque, consectetur dolorem amet
-          minima culpa impedit ipsum odit necessitatibus inventore expedita vel
-          blanditiis? Deleniti temporibus nihil rem quas, accusamus debitis at
-          excepturi perferendis nam soluta aut incidunt illo consequuntur sed
-          natus quibusdam distinctio, explicabo esse ipsum, repudiandae suscipit
-          blanditiis recusandae doloribus maiores. Maiores officia repudiandae
-          et, beatae voluptates sunt labore commodi consectetur quidem expedita
-          modi similique rem itaque qui quasi perspiciatis quae ea omnis.
-          Laborum impedit rerum nisi ab. Praesentium similique at fuga?
-          Dignissimos nostrum cupiditate enim nam corrupti fuga laboriosam, unde
-          ab soluta. Unde est delectus, ratione sit voluptas exercitationem
-          cupiditate eveniet at eius dolore odit. Assumenda unde, soluta rem
-          porro, consequuntur nisi tempora, alias facere incidunt fuga natus
-          officiis rerum odio distinctio nesciunt. Delectus, eum quis.
-          Exercitationem, aut praesentium! Unde quo eos illum quisquam,
-          architecto nesciunt omnis molestiae in rem repudiandae neque corrupti,
-          officia aperiam odit consectetur modi voluptatem asperiores
-          voluptatum, velit saepe! Minus nisi explicabo blanditiis! Harum
-          quibusdam rem mollitia aut odio? Quisquam incidunt eveniet,
-          perferendis deleniti doloribus veniam voluptate iure quasi atque nisi
-          obcaecati unde aliquam explicabo similique amet possimus nihil
-          necessitatibus accusamus harum totam. Iusto ipsum quidem rem nihil
-          vitae ipsam illo dolor nulla provident maxime, impedit voluptate quas
-          nisi? Velit perspiciatis nisi molestias adipisci quia totam itaque
-          quidem recusandae rerum voluptas tenetur sapiente sit ratione,
-          voluptatibus dolores eum delectus, consectetur amet dolorum ullam a
-          praesentium. Enim expedita esse voluptatem impedit officiis aliquid
-          cupiditate id distinctio! Eveniet harum culpa neque libero aperiam
-          sint doloribus delectus sequi ipsum natus. Sequi, cum neque! Nulla
-          quam non cum ipsa vitae adipisci autem voluptates modi, ex quis in
-          distinctio obcaecati expedita eaque odio delectus porro? In nihil
-          praesentium magni quam? Ullam natus atque laborum molestias dolorum
-          debitis voluptatem ipsam aperiam. Nihil alias voluptatum cumque eius
-          repudiandae error consequuntur maxime, vel aut tempora. Blanditiis
-          praesentium optio consectetur possimus laudantium asperiores eaque
-          vitae tempore repudiandae voluptatum beatae corporis, repellendus
-          nulla doloremque assumenda! Voluptatibus harum minima illo facere!
-          Asperiores itaque dolores, nostrum sed, nulla quidem sint veniam
-          inventore doloremque fuga assumenda aliquid voluptate consequuntur eum
-          reiciendis amet eius eaque quisquam recusandae libero labore neque.
-          Iste voluptatum eveniet numquam!
-        </p>
+            <h1>Polecane</h1>
+            <div class="small-separator"></div>
+
+            <div class="slick-slider" id="home-slider">
+               <div class="background">
+                  <div class="slider-site">
+                     <img src="img/slider background.png" alt="" />
+                  </div>
+                  <div class="slider-site">
+                     <img src="img/anime background.jpg" alt="" />
+                  </div>
+                  <div class="slider-site">
+                     <img src="img/berserk.jpg" alt="" />
+                  </div>
+               </div>
+
+               <div class="content">
+                  <div>
+                     <div class="slider-site">
+                        <div class="text">
+                           <div class="text-big">
+                              Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                              amet
+                           </div>
+                           <div class="separator"></div>
+                           <div class="text-normal">
+                              Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                              amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+                              sit amet
+                           </div>
+                        </div>
+                        <a class="waves-effect waves-light btn-large primary"
+                           >Button</a
+                        >
+                     </div>
+                  </div>
+                  <div>
+                     <div class="slider-site">
+                        <div class="text">
+                           <div class="text-big">
+                              Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                              amet
+                           </div>
+                           <div class="separator"></div>
+                           <div class="text-normal">
+                              Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                              amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+                              sit amet
+                           </div>
+                        </div>
+                        <a class="waves-effect waves-light btn-large primary"
+                           >Button</a
+                        >
+                     </div>
+                  </div>
+                  <div>
+                     <div class="slider-site">
+                        <div class="text">
+                           <div class="text-big">
+                              Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                              amet
+                           </div>
+                           <div class="separator"></div>
+                           <div class="text-normal">
+                              Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                              amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+                              sit amet
+                           </div>
+                        </div>
+                        <a class="waves-effect waves-light btn-large primary"
+                           >Button</a
+                        >
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="separator"></div>
+            <h1>Najnowsze odcinki</h1>
+            <div class="separator"></div>
+
+            <div class="col-slider">
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="separator"></div>
+            <h1>Najnowsze filmy</h1>
+            <div class="separator"></div>
+
+            <div class="col-slider">
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="separator"></div>
+            <h1>Najpopularniejsze anime</h1>
+            <div class="separator"></div>
+
+            <div class="col-slider">
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div>
+                  <div class="col-slider-item">
+                     <div class="movie-card">
+                        <div class="image">
+                           <img src="img/berserk.jpg" alt="example">
+                           <div class="background">
+                              <i class="material-icons">search</i>
+                           </div>
+                        </div>
+                        <a href="#" class="text-subheader">Berserk 2016</a>
+                        <div class="categories">
+                           <a href="#">Akcja</a>
+                           <a href="#">Dramat</a>
+                           <a href="#">Horror</a>
+                        </div>
+                        <div class="card-stats">
+                           <div class="stat">
+                              <span>Napisy:</span>
+                              <img src="img/Pol Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>Dźwięk:</span>
+                              <img src="img/Jp Flag.png" alt="example">
+                           </div>
+                           <div class="stat">
+                              <span>5.0</span>
+                              <img src="img/Star.png" alt="example">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
       </div>
-    </div>
 
-    <footer class="footer">
-      <div class="row">
-        <div class="col s3">
-          <h1 class="title">
-            Mapa witryny
-          </h1>
 
-          <ul class="footer-nav">
-            <li class="footer-nav-item"><a href="#">Strona główna</a></li>
-            <li class="footer-nav-item"><a href="#">Seriale</a></li>
-            <li class="footer-nav-item"><a href="#">Filmy</a></li>
-            <li class="footer-nav-item"><a href="#">Rankingi</a></li>
-            <li class="footer-nav-item"><a href="#">Forum</a></li>
-            <li class="footer-nav-item"><a href="#">Kontakt</a></li>
-            <li class="footer-nav-item"><a href="#">FAQ</a></li>
-            <li class="footer-nav-item"><a href="#">Regulamin</a></li>
-            <li class="footer-nav-item"><a href="#">Polityka prywatności</a></li>
-            <li class="footer-nav-item"><a href="#">Rejestracja</a></li>
-          </ul>
-        </div>
-        <div class="col s6">
-          <h1 class="title">
-            Liczby
-          </h1>
-          <div class="row">
-            <div class="col s6">
-              <div class="counter">
-                <div class="number" id="counter1" data-value="523452">
-                  0
-                </div>
-                <div class="counter-title">
-                  Przesłanych odcinków
-                </div>
-              </div>
-              <div class="counter">
-                <div class="number" id="counter2" data-value="56365">
-                  523 000
-                </div>
-                <div class="counter-title">
-                  Przesłanych filmów
-                </div>
-              </div>
+      <footer class="footer">
+         <div class="row">
+            <div class="col s3">
+               <h1 class="title">
+                  Mapa witryny
+               </h1>
+
+               <ul class="footer-nav">
+                  <li class="footer-nav-item"><a href="#">Strona główna</a></li>
+                  <li class="footer-nav-item"><a href="#">Seriale</a></li>
+                  <li class="footer-nav-item"><a href="#">Filmy</a></li>
+                  <li class="footer-nav-item"><a href="#">Rankingi</a></li>
+                  <li class="footer-nav-item"><a href="#">Forum</a></li>
+                  <li class="footer-nav-item"><a href="#">Kontakt</a></li>
+                  <li class="footer-nav-item"><a href="#">FAQ</a></li>
+                  <li class="footer-nav-item"><a href="#">Regulamin</a></li>
+                  <li class="footer-nav-item">
+                     <a href="#">Polityka prywatności</a>
+                  </li>
+                  <li class="footer-nav-item"><a href="#">Rejestracja</a></li>
+               </ul>
             </div>
             <div class="col s6">
-              <div class="counter">
-                <div class="number" id="counter3" data-value="345154">
-                  523 000
-                </div>
-                <div class="counter-title">
-                  Wpisów na forum
-                </div>
-              </div>
-              <div class="counter">
-                <div class="number" id="counter4" data-value="346984">
-                  523 000
-                </div>
-                <div class="counter-title">
-                  Komentarzy
-                </div>
-              </div>
+               <h1 class="title">
+                  Liczby
+               </h1>
+               <div class="row">
+                  <div class="col s6">
+                     <div class="counter">
+                        <div class="number" id="counter1" data-value="523452">
+                           0
+                        </div>
+                        <div class="counter-title">
+                           Przesłanych odcinków
+                        </div>
+                     </div>
+                     <div class="counter">
+                        <div class="number" id="counter2" data-value="56365">
+                           523 000
+                        </div>
+                        <div class="counter-title">
+                           Przesłanych filmów
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col s6">
+                     <div class="counter">
+                        <div class="number" id="counter3" data-value="345154">
+                           523 000
+                        </div>
+                        <div class="counter-title">
+                           Wpisów na forum
+                        </div>
+                     </div>
+                     <div class="counter">
+                        <div class="number" id="counter4" data-value="346984">
+                           523 000
+                        </div>
+                        <div class="counter-title">
+                           Komentarzy
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-        <div class="col s3">
-          <h1 class="title">
-            Social media
-          </h1>
+            <div class="col s3">
+               <h1 class="title">
+                  Social media
+               </h1>
 
-          <ul class="socials">
-            <li><a href="#"><img src="img/socials/facebook.svg" alt="facebook"></a></li>
-            <li><a href="#"><img src="img/socials/twitter.svg" alt="twitter"></a></li>
-            <li><a href="#"><img src="img/socials/vk.svg" alt="vk"></a></li>
-            <li><a href="#"><img src="img/socials/instagram.svg" alt="instagram"></a></li>
-            <li><a href="#"><img src="img/socials/pinterest.svg" alt="pinterest"></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+               <ul class="socials">
+                  <li>
+                     <a href="#"
+                        ><img src="img/socials/facebook.svg" alt="facebook"
+                     /></a>
+                  </li>
+                  <li>
+                     <a href="#"
+                        ><img src="img/socials/twitter.svg" alt="twitter"
+                     /></a>
+                  </li>
+                  <li>
+                     <a href="#"><img src="img/socials/vk.svg" alt="vk"/></a>
+                  </li>
+                  <li>
+                     <a href="#"
+                        ><img src="img/socials/instagram.svg" alt="instagram"
+                     /></a>
+                  </li>
+                  <li>
+                     <a href="#"
+                        ><img src="img/socials/pinterest.svg" alt="pinterest"
+                     /></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </footer>
 
-    <!--(if target !dist)><!-->
-    <script src="js/materialize.js"></script>
-    <script src="js/jquery-slim.js"></script>
-    <script src="js/countUp.js"></script>
-    <script src="js/slick.js"></script>
+      <!--(if target !dist)><!-->
+      <script src="js/materialize.js"></script>
+      <script src="js/jquery-slim.js"></script>
+      <script src="js/countUp.js"></script>
+      <script src="js/slick.js"></script>
 
-    <script src="js/app/utils.js"></script>
-    <script src="js/app/main.js"></script>
-    <script src="js/app/navigation.js"></script>
-    <script src="js/app/parallax.js"></script>
-    <script src="js/app/search.js"></script>
-    <script src="js/app/counters.js"></script>
-    <script src="js/app/sliders.js"></script>
-    <!--<!(endif)-->
-    <!--(if target dist)>
+      <script src="js/app/utils.js"></script>
+      <script src="js/app/main.js"></script>
+      <script src="js/app/navigation.js"></script>
+      <script src="js/app/parallax.js"></script>
+      <script src="js/app/search.js"></script>
+      <script src="js/app/counters.js"></script>
+      <script src="js/app/sliders.js"></script>
+      <!--<!(endif)-->
+      <!--(if target dist)>
     <script src="js/app.min.js"></script>
     <!(endif)-->
-  </body>
+   </body>
 </html>

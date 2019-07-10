@@ -6,7 +6,6 @@ function WindowScroll() {
    this.body = document.querySelector('body');
    this.isBlocked = false;
 
-
    this.disable = function() {
       if(this.isBlocked === false) {
          this.body.classList.add('no-scroll');
@@ -23,8 +22,3 @@ function WindowScroll() {
 }
 
 var windowScroll = new WindowScroll();
-
-
-
-
-
