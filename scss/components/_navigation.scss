@@ -1,6 +1,7 @@
 
+
 .menu-hamburger {
-   width: 80px;
+   width: 70px;
    height: 70px;
    position: fixed;
    cursor: pointer;
@@ -9,11 +10,6 @@
    left: 0;
    will-change: transform;
    transition: transform .3s ease-out;
-   transform: translateY(-100%);
-
-   &.show-el {
-      transform: translateY(0);
-   }
 
    .line {
       position: absolute;
@@ -37,18 +33,6 @@
       transform: translate(-50%, 700%);
    }
 
-   &.active {
-      .line:nth-child(1) {
-         transform: translate(-50%, -50%) rotate(-45deg);
-      }
-      .line:nth-child(2) {
-         transform: translate(-50%, -50%) scaleX(0);
-      }
-      .line:nth-child(3) {
-         transform: translate(-50%, -50%) rotate(45deg);
-      }
-   }
-
    .background {
       position: absolute;
       top: 0;
@@ -62,18 +46,47 @@
       opacity: 0;
    }
 
+   &:before {
+      content: "";
+      display: block;
+      @include screen("md", "xl") {width: 550px;}
+      @include screen("xs", "sm") {width: 400px;}
+      background-color: color('primary-light');
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      will-change: transform;
+      transition: transform .3s ease-out;
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: 0;
+      pointer-events: none;
+   }
+
    &:hover .background {
       opacity: 1;
    }
-}
 
-body.no-scroll .nav-bar {
-   padding-right: 10px;
-   pointer-events: none;
+   &.active {
+      .line:nth-child(1) {
+         transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      .line:nth-child(2) {
+         transform: translate(-50%, -50%) scaleX(0);
+      }
+      .line:nth-child(3) {
+         transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:before {
+         transform: scaleX(1);
+      }
+   }
 }
 
 .nav-bar {
-   position: absolute;
+   position: fixed;
    top: 0;
    left: 0;
    width: 100%;
@@ -83,9 +96,8 @@ body.no-scroll .nav-bar {
    display: flex;
    will-change: transform;
    transition: transform .3s ease-out;
-   transform: translateY(-100%);
    box-shadow: $shadow-light;
-   padding-left: 80px;
+   padding-left: 70px;
 
    .dropdown-content {
       top: -70px;
@@ -122,10 +134,7 @@ body.no-scroll .nav-bar {
 
    }
 
-   &.active {
-      transform: translateY(0);
 
-   }
 
    &.fixed {
       position: fixed;
@@ -147,10 +156,17 @@ body.no-scroll .nav-bar {
       color: color('font-light');
       padding-left: 15px;
       cursor: pointer;
-      transform: translateY(100%);
+
+      @include screen("xs", "md") {
+         padding: 0 10px;
+      }
 
       .name, .material-icons {
          padding-right: 15px;
+
+         @include screen("xs", "md") {
+            display: none;
+         }
       }
 
       .image {
@@ -174,7 +190,7 @@ body.no-scroll .nav-bar {
          width: 100%;
          height: 100%;
          z-index: -1;
-         background-color: color('dark-transparent');
+         background-color: color('primary-light');
          will-change: transform;
          transition: opacity .2s linear;
          opacity: 0;
@@ -186,68 +202,84 @@ body.no-scroll .nav-bar {
    }
 }
 
+
+body.no-scroll .nav-bar {
+   padding-right: 10px;
+   pointer-events: none;
+}
+
 .nav-container {
-   position: absolute;
-   z-index: 1;
+   position: fixed;
+   z-index: 4;
    top: 0;
    left: 0;
-   width: 700px;
+   max-width: 100%;
    height: 100vh;
-   mask-image: linear-gradient(black 80%, transparent);
    overflow: hidden;
    will-change: transform;
    transition: transform .3s ease-out;
+   transform: translateX(-100%);
 
-   &.hide-el {
-      transform: translateX(-100%);
-      position: fixed;
-      mask-image: none;
-      top: 0;
-      left: 0;
-      z-index: 4;
+   @include screen("xxl", "xxl") {width: 700px;}
+   @include screen("xl", "xl") {width: 650px;}
+   @include screen("md", "lg") {width: 600px;}
+   @include screen("xs", "sm") {width: 400px;}
 
-      .navigation {
-         background-color: color('primary-light');
-         box-shadow: $shadow-light;
-
-         .nav-list li .background {
-            background-color: color('dark-transparent2') !important;
-         }
-      }
-
-      &.expand {
-         transform: translateX(0);
-      }
+   &.expand {
+      transform: translateX(0);
    }
 
    .navigation {
       width: 100%;
       height: 100%;
-      background-color: color('dark-transparent');
-      transform: skew(-10deg);
+      background-color: color('primary-light');
       position: relative;
-      left: -10vw;
-      padding-left: 10vw;
-      padding-bottom: 120px;
-      padding-top: 50px;
+      padding-top: 70px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      overflow-y: auto;
+      overflow-x: hidden;
+      box-shadow: $shadow-light;
+
+      @include screen("xxl", "xxl") {
+         padding-bottom: 120px;
+      }
+
+      @include screen("md", "xxl") {
+         transform: skew(-10deg);
+         left: -10vw;
+         padding-left: 10vw;
+      }
 
       .navigation-content {
          width: 100%;
          height: 100%;
          color: color('font-light');
-         padding-left: 100px;
-         display: flex;
-         flex-direction: column;
-         justify-content: space-around;
+         padding-left: 15px;
+
+         @include screen("xxl", "xxl") {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+         }
+
+         @include screen("md", "xxl") {
+            padding-left: 100px;
+         }
 
          .logo {
-            transform: skew(10deg);
             font-size: 72px;
             text-shadow: $shadow-font-light;
             line-height: 100%;
+
+            @include screen("md", "xxl") {
+               transform: skew(10deg);
+            }
+
+            @include screen("xs", "xl") {
+               margin-bottom: 40px;
+            }
          }
 
          .nav-list {
@@ -288,10 +320,13 @@ body.no-scroll .nav-bar {
                   padding: 20px 0;
                   padding-left: 30px;
                   position: relative;
-                  transform: skew(10deg);
                   width: 110%;
                   left: -6px;
                   will-change: transform;
+
+                  @include screen("md", "xxl") {
+                     transform: skew(10deg);
+                  }
 
                   i {
                      padding-right: 10px;
@@ -332,4 +367,83 @@ body.no-scroll .nav-bar {
       opacity: 1;
       pointer-events: all;
    }
+}
+
+.home-header {
+   @include screen("xxl", "xxl") {
+      .menu-hamburger {
+         transform: translateY(-100%);
+
+         &.show-el {
+            transform: translateY(0);
+         }
+      }
+
+      .nav-bar {
+         position: absolute;
+         transform: translateY(-100%);
+
+         .user-panel {
+            transform: translateY(100%);
+
+            .background {
+               background-color: color('dark-transparent');
+            }
+         }
+
+         &.active {
+            transform: translateY(0);
+         }
+
+         &.fixed {
+            position: fixed;
+
+            .user-panel {
+               transform: translateY(0);
+
+               .background {
+                  background-color: color('primary-light');
+               }
+            }
+         }
+      }
+
+      .nav-container {
+         position: absolute;
+         z-index: 1;
+         mask-image: linear-gradient(black 80%, transparent);
+         transform: translateX(0);
+
+         .navigation {
+            background-color: color('dark-transparent');
+            box-shadow: none;
+         }
+
+         &.hide-el {
+            transform: translateX(-100%);
+            position: fixed;
+            mask-image: none;
+            top: 0;
+            left: 0;
+            z-index: 4;
+
+            .navigation {
+               background-color: color('primary-light');
+               box-shadow: $shadow-light;
+
+               .nav-list li .background {
+                  background-color: color('dark-transparent2') !important;
+               }
+            }
+
+            &.expand {
+               transform: translateX(0);
+            }
+         }
+      }
+   }
+}
+
+.dropdown-content {
+   min-width: 160px;
 }

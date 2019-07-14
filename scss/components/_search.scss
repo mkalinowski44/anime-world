@@ -186,3 +186,26 @@
       }
    }
 }
+
+
+.page-wrapper {
+   .home-search {
+      display: none;
+   }
+
+   .home-search-spacer {
+      display: none;
+   }
+}
+
+.home-header {
+   @include screen("xxl", "xxl") {
+      .home-search {
+         display: block;
+      }
+
+      .home-search-spacer {
+         display: block;
+      }
+   }
+}
