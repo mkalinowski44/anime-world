@@ -159,9 +159,14 @@
       .title-row {
          display: flex;
          justify-content: space-between;
+         align-items: center;
 
          .title {
             @include text-subheader();
+         }
+
+         .categories {
+            display: block;
          }
       }
 

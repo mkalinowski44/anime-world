@@ -1,8 +1,7 @@
 .badge {
    display: inline-block;
-   padding: 0 10px;
-   @include text-small-header();
-   background-color: color('secondary-light');
+   padding: 5px 5px 2px 5px;;
+   @include text-small();
    color: color('font-light');
-   border-radius: 14px * 1.25;
+   border-radius: 5px;
 }

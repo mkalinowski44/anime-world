@@ -103,7 +103,7 @@ module.exports = function(grunt) {
       copy: {
          dist: {
             files: [
-                  {expand: true, cwd: "img/", src: "*", dest: "dist/img/"}
+                  {expand: true, cwd: "img/", src: "**", dest: "dist/img/"}
             ]
          }
       }
@@ -112,7 +112,6 @@ module.exports = function(grunt) {
    grunt.registerTask("build", [
       // "clean",
       "targethtml",
-      // "babel",
       "concat",
       // "uglify",
       "sass",

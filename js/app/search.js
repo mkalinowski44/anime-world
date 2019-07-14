@@ -1,5 +1,6 @@
 // Search
-function searchController(form, options = {}) {
+function searchController(form, options) {
+   if(!options) options = {};
    this.hideOn = options.hideOn || null;
    this.scrollTo = options.scrollTo || null;
    this.bindEl = options.bindEl ? document.querySelector(options.bindEl + ' input') : null;
