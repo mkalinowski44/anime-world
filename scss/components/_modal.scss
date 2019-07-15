@@ -2,6 +2,10 @@
    background-color: color('font-light');
    border-radius: 15px;
 
+   @include screen("xs", "sm") {
+      max-height: 80%;
+   }
+
    .modal-footer {
       background-color: color('font-light');
       height: auto;
@@ -25,12 +29,17 @@
       }
    }
 
-   &.modal-fixed-footer .modal-content {
-      height: calc(100% - 115px);
+   &.modal-fixed-footer {
+      height: 80%;
+
+      .modal-content {
+         height: calc(100% - 115px);
+      }
    }
 
    .modal-image {
       padding-left: 0;
+      margin-bottom: 25px;
 
       img {
          width: 100%;

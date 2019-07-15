@@ -27,7 +27,7 @@ body {
    background: color('primary-light');
 }
 
-.page-wrapper{
+.page-wrapper {
    position: relative;
    z-index: 1;
 
@@ -43,7 +43,7 @@ body {
       @include screen("xs", "xs")   {padding: 15px;}
       @include screen("sm", "sm")   {padding: 30px;}
       @include screen("md", "lg")   {padding: 40px;}
-      @include screen("xl", "xxl") {padding: 50px;}
+      @include screen("xl", "xxl")  {padding: 50px;}
 
       box-shadow: $shadow-light;
       position: relative;
@@ -62,6 +62,10 @@ body {
       h1 {
          @include text-header();
          margin: 0;
+
+         @include screen("xs", "xs") {
+            font-size: 28px;
+         }
       }
    }
 
@@ -158,12 +162,14 @@ body {
 
    a {
       margin-right: 4px;
+      margin-bottom: 4px;
    }
 }
 
 .card-stats {
    display: flex;
    flex-wrap: wrap;
+   align-items: center;
 
    .stat {
       display: flex;
@@ -184,8 +190,20 @@ body {
 
 .categories-grid {
    display: grid;
-   grid-template-columns: repeat(4, 1fr);
    grid-gap: 5px;
+
+   @include screen("xxl", "xxl") {
+      grid-template-columns: repeat(4, 1fr);
+   }
+   @include screen("lg", "xl") {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+   @include screen("md", "md") {
+      grid-template-columns: 1fr 1fr;
+   }
+   @include screen("xs", "sm") {
+      grid-template-columns: 1fr;
+   }
 
    .category {
       display: flex;
@@ -222,8 +240,17 @@ body {
 
 .ranking {
    margin-top: 50px;
-   padding: 0 50px;
    text-align: center;
+
+   @include screen("xl", "xxl") {
+      padding: 0 50px;
+   }
+   @include screen("md", "lg") {
+      padding: 0 25px;
+   }
+   @include screen("xs", "sm") {
+      padding: 0 15px;
+   }
 
    .pos1 {
       width: 50%;
@@ -261,8 +288,10 @@ body {
    }
 
    .text-small-header {
-      margin-top:
-      10px;
+      margin-top: 10px;
+      width: 200%;
+      position: relative;
+      left: -50%;
    }
 }
 
@@ -275,5 +304,9 @@ body {
 
    &:not(:last-child) {
       border-bottom: 1px solid color('background-light');
+   }
+
+   .categories {
+      justify-content: flex-end;
    }
 }

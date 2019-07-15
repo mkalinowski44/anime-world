@@ -111,8 +111,8 @@ module.exports = function(grunt) {
 
    grunt.registerTask("build", [
       // "clean",
-      "targethtml",
-      "concat",
+      // "targethtml",
+      // "concat",
       // "uglify",
       "sass",
       "autoprefixer",

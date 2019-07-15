@@ -1,5 +1,6 @@
 .page-header {
    height: 100vh;
+   min-height: 850px;
    background-color: black;
    overflow: hidden;
    position: relative;
@@ -20,46 +21,75 @@
    z-index: 1;
    top: 0;
    right: 0;
-   width: 900px;
    height: 100vh;
+   min-height: 850px;
    mask-image: linear-gradient(black 80%, transparent);
    overflow: hidden;
+   width: 100%;
+
+   @include screen("xxl", "xxl") {
+      width: 900px;
+   }
+
+   @include screen("xs", "xl") {
+      background-color: color('dark-transparent');
+   }
+
+   @include screen("xs", "xs")   {padding: 0 15px;}
+   @include screen("sm", "sm")   {padding: 0 50px;}
+   @include screen("md", "md")   {padding: 0 75px;}
+   @include screen("lg", "lg")   {padding: 0 100px;}
+   @include screen("xl", "xl")   {padding: 0 120px;}
 
    .recent-post-header {
       width: 100%;
       height: 100%;
-      background-color: color('dark-transparent');
-      transform: skew(-10deg);
       position: relative;
-      right: -10vw;
-      padding-right: 10vw;
-      padding-bottom: 120px;
-      padding-top: 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
+      @include screen("xxl", "xxl") {
+         transform: skew(-10deg);
+         right: -10vw;
+         padding-right: 10vw;
+         padding-bottom: 120px;
+         padding-top: 50px;
+         background-color: color('dark-transparent');
+      }
+
       .recent-post-header-content {
          width: 100%;
          height: 100%;
-         padding-right: 100px;
          display: flex;
          flex-direction: column;
          justify-content: center;
 
+         @include screen("xxl", "xxl") {
+            padding-right: 100px;
+         }
+
          .header {
             @include text-small();
-            transform: skew(10deg);
             text-shadow: $shadow-font-light;
             color: color('font-light');
             padding: 15px;
             padding-left: 30px;
+
+            @include screen("xxl", "xxl") {
+               transform: skew(10deg);
+            }
          }
          .recent-list {
             margin: 0;
             padding: 0;
             list-style: none;
             display: block;
+
+            @include screen("lg", "xl") {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+            }
 
             li {
                margin: 0;
@@ -78,17 +108,27 @@
                   width: 100%;
                   height: 1px;
                   background-color: color('font-light');
-                  mask-image: linear-gradient(to left, black, transparent);
+
+                  @include screen("lg", "xxl") {
+                     mask-image: linear-gradient(to left, black, transparent);
+                  }
+
+                  @include screen("xs", "md") {
+                     opacity: 0.44;
+                  }
                }
             }
             .recent-header-item {
                padding: 15px;
-               padding-left: 30px;
                display: flex;
                position: relative;
                text-decoration: none;
                color: color('font-light');
                will-change: transform !important;
+
+               @include screen("xxl", "xxl") {
+                  padding-left: 30px;
+               }
 
                .background {
                   position: absolute;
@@ -115,41 +155,69 @@
                   flex-grow: 0;
                   overflow: hidden;
 
+                  @include screen("sm", "sm") {
+                     width: 126px;
+                     flex-basis: 126px;
+                  }
+
+                  @include screen("xs", "xs") {
+                     display: none;
+                  }
+
+                  @include screen("xs", "xl") {
+                     border-radius: 10px;
+                  }
+
                   img {
                      position: relative;
                      top: -10%;
                      left: -10%;
                      width: 120%;
                      height: 120%;
-                     transform: skew(10deg);
                      border-radius: 10px;
                      object-fit: cover;
+                     z-index: 1;
+
+                     @include screen("xxl", "xxl") {
+                        transform: skew(10deg);
+                     }
                   }
                }
 
                .info-col {
-                  padding-left: 15px;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-around;
 
+                  @include screen("sm", "xxl") {
+                     padding-left: 15px;
+                  }
+
                   .title {
                      @include text-subheader();
-                     transform: skew(10deg);
+                     @include screen("xxl", "xxl") {
+                        transform: skew(10deg);
+                     }
                   }
 
                   .date {
                      @include text-small();
-                     transform: skew(10deg);
+                     @include screen("xxl", "xxl") {
+                        transform: skew(10deg);
+                     }
                   }
 
                   .stats {
-                     transform: skew(10deg);
                      display: flex;
                      align-items: center;
+                     @include screen("xxl", "xxl") {
+                        transform: skew(10deg);
+                     }
 
                      img {
                         margin: 0 15px 0 5px;
+                        position: relative;
+                        z-index: 1;
                      }
                   }
                }
@@ -160,5 +228,10 @@
 }
 
 body.no-scroll .recent-post-header-container .recent-post-header {
-   right: calc(-10vw + 10px);
+   @include screen("xxl", "xxl") {
+      right: calc(-10vw + 10px);
+   }
+   @include screen("xs", "xl") {
+      padding-right: 10px;
+   }
 }

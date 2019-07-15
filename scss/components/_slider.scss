@@ -33,21 +33,60 @@
       color: color('font-light');
       position: relative;
 
-      $slider-site-padding: 100px;
+      $slider-site-padding-lg: 100px;
+      $slider-site-padding-md: 60px;
+      $slider-site-padding-sm: 40px;
 
       .slider-site {
-         padding: 50px $slider-site-padding;
          position: relative;
+         @include screen("xl", "xxl") {
+            padding: 50px $slider-site-padding-lg;
+         }
+         @include screen("md", "lg") {
+            padding: 50px $slider-site-padding-md;
+         }
+         @include screen("xs", "sm") {
+            padding: 50px $slider-site-padding-sm;
+         }
 
          .text {
-            width: 70%;
             text-shadow: $shadow-font-dark;
+
+            @include screen("lg", "xxl") {
+               width: 70%;
+            }
+
+            @include screen("sm", "md") {
+               .text-big {
+                  font-size: 32px;
+               }
+               .text-normal {
+                  font-size: 16px;
+               }
+            }
+
+            @include screen("xs", "xs") {
+               .text-big {
+                  font-size: 24px;
+               }
+               .text-normal {
+                  font-size: 12px;
+               }
+            }
          }
 
          .btn {
             position: absolute;
             bottom: 50px;
-            right: $slider-site-padding;
+            @include screen("xl", "xxl") {
+               right: $slider-site-padding-lg;
+            }
+            @include screen("md", "lg") {
+               right: $slider-site-padding-md;
+            }
+            @include screen("xs", "sm") {
+               right: $slider-site-padding-sm;
+            }
          }
       }
 
@@ -57,12 +96,21 @@
          transform: translateY(-50%);
          display: block;
          height: 100%;
-         width: $slider-site-padding - 15;
+         @include screen("xl", "xxl") {
+            width: $slider-site-padding-lg;
+         }
+         @include screen("md", "lg") {
+            width: $slider-site-padding-md;
+         }
+         @include screen("xs", "sm") {
+            width: $slider-site-padding-sm;
+         }
          background-color: transparent;
          border: none;
          color: color('font-light');
          cursor: pointer;
          z-index: 1;
+         padding: 0;
 
          i {
             text-shadow: $shadow-font-dark;
@@ -112,22 +160,34 @@
    .slick-arrow {
       position: absolute;
       top: 50%;
+
+      @include screen("xs", "xs") {
+         width: 40px;
+         height: 40px;
+         background-color: transparent !important;
+         box-shadow: none;
+
+         i {
+            line-height: 40px;
+            color: color('placeholder-light');
+         }
+      }
    }
 
    .arrow-prev {
-      @include screen("xs", "xs")   {left: -15px;}
+      @include screen("xs", "xs")   {left: -5px;}
       @include screen("sm", "sm")   {left: -30px;}
       @include screen("md", "lg")   {left: -40px;}
       @include screen("xl", "xxl") {left: -50px;}
       transform: translate(-50%, -50%);
 
       i {
-         transform: translateX(2px);
+         transform: translateX(4px);
       }
    }
 
    .arrow-next {
-      @include screen("xs", "xs")   {right: -15px;}
+      @include screen("xs", "xs")   {right: -5px;}
       @include screen("sm", "sm")   {right: -30px;}
       @include screen("md", "lg")   {right: -40px;}
       @include screen("xl", "xxl") {right: -50px;}

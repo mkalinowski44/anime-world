@@ -34,6 +34,35 @@ if($('.col-slider').length) {
          nextArrow: '<button type="button" class="btn-floating btn-large waves-effect waves-light secondary-dark arrow-next">'
          + '<i class="material-icons">arrow_forward_ios</i>'
          + '</button>',
+         responsive: [
+            {
+               breakpoint: 1024,
+               settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3
+               }
+            },
+            {
+               breakpoint: 768,
+               settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+               }
+            },
+            {
+               breakpoint: 480,
+               settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  prevArrow: '<button type="button" class="btn-floating btn-large waves-effect waves-dark secondary-dark arrow-prev">'
+                  + '<i class="material-icons">arrow_back_ios</i>'
+                  + '</button>',
+                  nextArrow: '<button type="button" class="btn-floating btn-large waves-effect waves-dark secondary-dark arrow-next">'
+                  + '<i class="material-icons">arrow_forward_ios</i>'
+                  + '</button>',
+               }
+            }
+         ]
       });
    });
 }

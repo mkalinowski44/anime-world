@@ -17,15 +17,26 @@
          width: 100%;
          height: 70px;
          border: none;
-         background: transparent;
          padding: 0 70px;
+         background: transparent;
          color: color("font-light");
          border-top-left-radius: 15px;
          border-top-right-radius: 15px;
          outline: none;
+         transition: padding .2s linear;
+
+         @include screen("xs", "xs") {
+            padding: 0 30px;
+         }
 
          &::placeholder {
             color: color("light-transparent");
+         }
+
+         @include screen("xs", "xs") {
+            &:focus {
+               padding: 0 30px 0 0;
+            }
          }
       }
 
@@ -42,12 +53,17 @@
          line-height: 70px;
          text-align: center;
          opacity: 0.44;
+
+         @include screen("xs", "xs") {
+            width: 30px;
+         }
       }
 
       .search-icon {
          left: 0;
          pointer-events: none;
       }
+
       .delete-icon {
          right: 0;
          cursor: pointer;
@@ -107,6 +123,13 @@
    opacity: 1;
 }
 
+.home-search form input:focus ~ .search-icon {
+   @include screen("xs", "xs") {
+      opacity: 0;
+      pointer-events: none;
+   }
+}
+
 .home-search-spacer {
    height: 75px;
 }
@@ -143,6 +166,15 @@
       position: relative;
       z-index: 1;
 
+      @include screen("sm", "sm") {
+         width: 126px;
+         flex-basis: 126px;
+      }
+
+      @include screen("xs", "xs") {
+         display: none;
+      }
+
       img {
          width: 100%;
          height: 100%;
@@ -152,9 +184,11 @@
    }
    .info-col {
       padding: 10px 15px;
-      padding-left: 0;
       position: relative;
       z-index: 1;
+      @include screen("sm", "xxl") {
+         padding-left: 0;
+      }
 
       .title-row {
          display: flex;
@@ -167,12 +201,19 @@
 
          .categories {
             display: block;
+            text-align: right;
          }
       }
 
       .description {
          margin-top: 10px;
          @include text-small();
+         display: block;
+         display: -webkit-box;
+         -webkit-line-clamp: 3;
+         -webkit-box-orient: vertical;
+         overflow: hidden !important;
+         max-height: 4.5em;
       }
 
       .stats {
