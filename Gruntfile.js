@@ -119,7 +119,7 @@ module.exports = function(grunt) {
       }
    });
 
-   grunt.registerTask("build", [
+   const fullBuild = [
       "clean",
       "targethtml",
       "concat",
@@ -129,6 +129,15 @@ module.exports = function(grunt) {
       "cssmin",
       "htmlmin",
       "copy"
-   ]);
+   ];
+
+   const fastBuild = [
+      "sass",
+      "autoprefixer",
+   ]
+
+   const isFast = 1;
+
+   grunt.registerTask("build", (isFast ? fastBuild : fullBuild));
 
 }
