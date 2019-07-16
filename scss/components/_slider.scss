@@ -1,14 +1,5 @@
 .slick-slider {
    position: relative;
-   z-index: -1;
-
-   &#home-slider {
-      height: 500px;
-
-      .slider-site {
-         height: 500px;
-      }
-   }
 
    .background, .content {
       position: absolute;
@@ -148,6 +139,43 @@
             .background {
                mask-image: linear-gradient(to left, black, transparent)
             }
+         }
+      }
+   }
+
+
+   &#home-slider {
+      height: 500px;
+
+      .slider-site {
+         height: 500px;
+      }
+   }
+
+   &#header-slider {
+      height: 100vh;
+      min-height: 500px;
+
+      .slider-site {
+         height: 100vh;
+         min-height: 500px;
+      }
+
+      .content .slider-site {
+         @include screen("xs", "xs")   {padding: 100px 15px;}
+         @include screen("sm", "sm")   {padding: 100px 50px;}
+         @include screen("md", "md")   {padding: 100px 75px;}
+         @include screen("lg", "lg")   {padding: 110px 100px;}
+         @include screen("xl", "xl")   {padding: 120px 120px;}
+         @include screen("xxl", "xxl") {padding: 140px 150px;}
+
+         .btn {
+            @include screen("xs", "xs")   {right: 15px; bottom: 80px}
+            @include screen("sm", "sm")   {right: 50px; bottom: 90px}
+            @include screen("md", "md")   {right: 75px; bottom: 100px}
+            @include screen("lg", "lg")   {right: 100px; bottom: 110px}
+            @include screen("xl", "xl")   {right: 120px; bottom: 120px}
+            @include screen("xxl", "xxl") {right: 150px; bottom: 140px}
          }
       }
    }

@@ -25,5 +25,9 @@ function headerParallax(element, speed) {
    this.start();
 }
 
-var header = new headerParallax(".page-header", 0.25);
-var header2 = new headerParallax(".background-image", 0.25);
+if($('.page-header').length) {
+   var header = new headerParallax(".page-header", 0.25);
+}
+if($('.background-image').length) {
+   var header2 = new headerParallax(".background-image", 0.25);
+}

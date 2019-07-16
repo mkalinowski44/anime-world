@@ -2,6 +2,8 @@
 function searchController(form, options) {
    if(!options) options = {};
    this.hideOn = options.hideOn || null;
+   this.enableHideOn = true;
+   this.disableHideOnBreakPoint = options.disableHideOnBreakPoint || null;
    this.scrollTo = options.scrollTo || null;
    this.bindEl = options.bindEl ? document.querySelector(options.bindEl + ' input') : null;
    this.formEl = document.querySelector(form);
@@ -72,7 +74,7 @@ function searchController(form, options) {
             value: Number(hideOn[1])
          }
 
-         if(this.isShow) {
+         if(this.isShow && this.enableHideOn) {
             var event = new Event('blur');
 
             if(hideOn.direction === '<') {
@@ -89,10 +91,35 @@ function searchController(form, options) {
       }
    }.bind(this);
 
+   this.resizeEvent = function() {
+      if(this.disableHideOnBreakPoint) {
+         var disableHideOnBreakPoint = this.disableHideOnBreakPoint.split(' ');
+         var direction = disableHideOnBreakPoint[0];
+         var value = Number(disableHideOnBreakPoint[1]);
+         var windowWidth = window.innerWidth;
+
+         if(direction === "<") {
+            if(windowWidth < value) {
+               this.enableHideOn = false;
+            } else {
+               this.enableHideOn = true;
+            }
+         }
+         if(direction === ">") {
+            if(windowWidth > value) {
+               this.enableHideOn = false;
+            } else {
+               this.enableHideOn = true;
+            }
+         }
+      }
+   }.bind(this);
+
    this.inputEl.addEventListener("keyup", this.changeEvent);
    this.inputEl.addEventListener("focus", this.focusEvent);
    this.inputEl.addEventListener("blur", this.blurEvent);
    window.addEventListener('scroll', this.scrollEvent);
+   window.addEventListener('resize', this.resizeEvent);
 
    this.resetEl.addEventListener(
       "click",
@@ -108,18 +135,26 @@ function searchController(form, options) {
 
 var pageContainer = document.querySelector('.page-wrapper');
 var pageContainerPosition = getElementPosition(pageContainer);
-var search = new searchController(
-   "#search-form",
-   {
-      hideOn: '< ' + pageContainerPosition,
-      bindEl: '#nav-search-form',
-      scrollTo: pageContainerPosition - 100
-   }
-);
+var isSearchForm = $('#search-form').length;
+
+if(isSearchForm) {
+   var search = new searchController(
+      "#search-form",
+      {
+         hideOn: '< ' + pageContainerPosition,
+         bindEl: '#nav-search-form',
+         scrollTo: pageContainerPosition - 100
+      }
+   );
+}
+
+var options = !isSearchForm ? {} : {
+   hideOn: '> ' + pageContainerPosition,
+   bindEl: '#search-form',
+   disableHideOnBreakPoint: '< 1500'
+};
+
 var search2 = new searchController(
    "#nav-search-form",
-   {
-      hideOn: '> ' + pageContainerPosition,
-      bindEl: '#search-form'
-   }
+   options
 );

@@ -44,20 +44,12 @@ body {
       @include screen("sm", "sm")   {padding: 30px;}
       @include screen("md", "lg")   {padding: 40px;}
       @include screen("xl", "xxl")  {padding: 50px;}
-
+      min-height: 100vh;
       box-shadow: $shadow-light;
       position: relative;
       z-index: 2;
       top: -150px;
       background-color: color('font-light');
-
-      .separator {
-         height: 46px;
-      }
-
-      .small-separator {
-         height: 20px;
-      }
 
       h1 {
          @include text-header();
@@ -67,6 +59,15 @@ body {
             font-size: 28px;
          }
       }
+
+      h2 {
+         @include text-subheader();
+         margin: 0;
+
+         @include screen("xs", "xs") {
+            font-size: 24px;
+         }
+      }
    }
 
    &.home {
@@ -74,6 +75,15 @@ body {
          top: -70px;
       }
    }
+}
+
+
+.separator {
+   height: 46px;
+}
+
+.small-separator {
+   height: 20px;
 }
 
 .movie-card {
@@ -238,6 +248,28 @@ body {
    }
 }
 
+.movie-grid {
+   display: grid;
+   @include screen("xs", "xs") {
+      grid-template-columns: 1fr;
+   }
+   @include screen("sm", "sm") {
+      grid-template-columns: 1fr 1fr;
+   }
+   @include screen("md", "md") {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+   @include screen("lg", "xxl") {
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   grid-gap: 20px;
+
+   .movie-card {
+      padding: 0;
+   }
+}
+
 .ranking {
    margin-top: 50px;
    text-align: center;
@@ -308,5 +340,121 @@ body {
 
    .categories {
       justify-content: flex-end;
+   }
+}
+
+.pagination {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+   background-color: color('background-light');
+   box-shadow: $shadow-light;
+   border-radius: 15px;
+   overflow: hidden;
+   @include text-subheader();
+
+   li {
+      height: 70px;
+      display: block;
+      color: color('font-dark');
+      position: relative;
+
+      &:before {
+         content: "";
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         background-color: color('dark-transparent2');
+         z-index: 0;
+         will-change: transform;
+         transition: opacity .2s linear;
+         opacity: 0;
+      }
+
+      &:hover:before {
+         opacity: 1;
+      }
+
+      &.current {
+         background-color: color('primary');
+         color: color('font-light');
+      }
+
+      a, i, input, form {
+         position: relative;
+         z-index: 1;
+         display: block;
+         color: inherit;
+         width: 100%;
+         height: 100%;
+         line-height: 70px;
+         text-align: center;
+      }
+
+      i {
+         font-size: 1.2em;
+      }
+
+      input {
+         background-color: transparent;
+         border: none;
+
+         &::placeholder {
+            color: color('font-dark');
+         }
+      }
+   }
+
+   .page {
+      display: none;
+   }
+
+   @include screen("xxl", "xxl") {
+      @for $i from 2 to 14 {
+         .page:nth-child(#{$i}) {
+            display: block;
+         }
+      }
+   }
+   @include screen("xl", "xl") {
+      @for $i from 2 to 12 {
+         .page:nth-child(#{$i}) {
+            display: block;
+         }
+      }
+   }
+   @include screen("lg", "lg") {
+      @for $i from 2 to 10 {
+         .page:nth-child(#{$i}) {
+            display: block;
+         }
+      }
+   }
+   @include screen("md", "md") {
+      @for $i from 2 to 8 {
+         .page:nth-child(#{$i}) {
+            display: block;
+         }
+      }
+   }
+   @include screen("sm", "sm") {
+      @for $i from 2 to 5 {
+         .page:nth-child(#{$i}) {
+            display: block;
+         }
+      }
+
+      .last-page {
+         display: none;
+      }
+   }
+   @include screen("xs", "xs") {
+      .current {
+         display: block;
+      }
+      .last-page {
+         display: none;
+      }
    }
 }

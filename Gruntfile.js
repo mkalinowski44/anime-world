@@ -136,7 +136,7 @@ module.exports = function(grunt) {
       "autoprefixer",
    ]
 
-   const isFast = 1;
+   const isFast = 0;
 
    grunt.registerTask("build", (isFast ? fastBuild : fullBuild));
 
