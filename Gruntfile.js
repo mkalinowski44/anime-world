@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                'scss/**',
                'js/**',
                'img/**',
-               'index.html'
+               'html/**'
             ],
             tasks: ['build']
          },
@@ -20,9 +20,14 @@ module.exports = function(grunt) {
 
       targethtml: {
          dist: {
-            files: {
-                  "dist/index.html": "index.html"
-            }
+            files: [
+               {
+                  expand: true,
+                  cwd: "html/",
+                  src: "*.html",
+                  dest: "dist/html/"
+               }
+            ]
          }
       },
 
@@ -94,9 +99,14 @@ module.exports = function(grunt) {
             options: {
                   collapseWhitespace: true
             },
-            files: {
-                  "dist/index.html": "dist/index.html"
-            }
+            files: [
+                  {
+                     expand: true,
+                     cwd: "dist/html/",
+                     src: "**",
+                     dest: "dist/html/"
+                  }
+            ]
          }
       },
 
@@ -110,15 +120,15 @@ module.exports = function(grunt) {
    });
 
    grunt.registerTask("build", [
-      // "clean",
-      // "targethtml",
-      // "concat",
-      // "uglify",
+      "clean",
+      "targethtml",
+      "concat",
+      "uglify",
       "sass",
       "autoprefixer",
-      // "cssmin",
-      // "htmlmin",
-      // "copy"
+      "cssmin",
+      "htmlmin",
+      "copy"
    ]);
 
 }
