@@ -40,15 +40,14 @@ body {
 
    .page-container {
       border-radius: 15px;
-      @include screen("xs", "xs")   {padding: 15px;}
-      @include screen("sm", "sm")   {padding: 30px;}
-      @include screen("md", "lg")   {padding: 40px;}
-      @include screen("xl", "xxl")  {padding: 50px;}
+      @include screen("xs", "xs")   {padding: 15px; top: -50px;}
+      @include screen("sm", "sm")   {padding: 30px; top: -73px;}
+      @include screen("md", "lg")   {padding: 40px; top: -83px;}
+      @include screen("xl", "xxl")  {padding: 50px; top: -93px;}
       min-height: 100vh;
       box-shadow: $shadow-light;
       position: relative;
       z-index: 2;
-      top: -150px;
       background-color: color('font-light');
 
       h1 {
@@ -72,7 +71,7 @@ body {
 
    &.home {
       .page-container {
-         top: -70px;
+         @include screen("xxl", "xxl")  {top: -70px;}
       }
    }
 }
