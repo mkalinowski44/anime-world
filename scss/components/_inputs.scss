@@ -1,0 +1,10 @@
+textarea.materialize-textarea:focus:not([readonly]) {
+   box-shadow: 0 1px 0 0 color('primary');
+}
+textarea.materialize-textarea:focus:not([readonly]) + label {
+   color: color('primary');
+}
+
+.btn-small {
+   border-radius: 20px;
+}

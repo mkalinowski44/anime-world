@@ -11,19 +11,20 @@ body {
    }
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
    width: 10px;
+   height: 10px;
 }
 
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
    background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
    background: color('primary');
 }
 
-::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
    background: color('primary-light');
 }
 
@@ -65,6 +66,41 @@ body {
 
          @include screen("xs", "xs") {
             font-size: 24px;
+         }
+      }
+
+      &.display-flex {
+         display: flex;
+         padding: 0;
+         overflow: hidden;
+
+         .left-col, .right-col {
+            flex-shrink: 0;
+            flex-grow: 0;
+            position: relative;
+            z-index: 10;
+            background-color: color('font-light');
+
+            &.active {
+               flex-basis: 300px;
+               box-shadow: $shadow-light;
+            }
+
+            .header {
+               width: 100%;
+               height: 110px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+
+               h1 {
+                  @include text-subheader();
+               }
+            }
+         }
+
+         .main-col {
+            width: 100%;
          }
       }
    }
@@ -315,6 +351,13 @@ body {
          height: 100%;
          border-radius: 50%;
          object-fit: cover;
+         @include circle-outline(color('primary'), 5px);
+         will-change: transform;
+         transition: transform .2s ease-out;
+
+         &:hover {
+            transform: scale(1.1);
+         }
       }
    }
 
@@ -346,7 +389,7 @@ body {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
    background-color: color('background-light');
-   box-shadow: $shadow-light;
+   box-shadow: $shadow-small-light;
    border-radius: 15px;
    overflow: hidden;
    @include text-subheader();
@@ -456,4 +499,191 @@ body {
          display: none;
       }
    }
+}
+
+.tabs {
+   background-color: color('primary-light');
+   box-shadow: $shadow-small-light;
+   height: 70px;
+
+   .tab {
+      height: 70px;
+
+      a, a:hover, a.active {
+         color: color('font-light');
+         @include text-subheader();
+         height: 70px;
+         line-height: 70px;
+         text-transform: none;
+         user-select: none;
+      }
+
+      a:focus, a:focus.active {
+         background-color: color('light-transparent2');
+      }
+   }
+
+   .indicator {
+      background-color: color('font-light');
+   }
+}
+
+.tab-content {
+   @include screen("xs", "xs")   {padding: 15px;}
+   @include screen("sm", "sm")   {padding: 30px;}
+   @include screen("md", "lg")   {padding: 40px;}
+   @include screen("xl", "xxl")  {padding: 50px;}
+}
+
+@mixin active-background() {
+   content: "";
+   position: absolute;
+   height: 100%;
+   background-color: color('background-light');
+   z-index: -1;
+   top: -1px;
+   @include screen("xs", "xs")   {left: -15px; width: calc(100% + 30px)}
+   @include screen("sm", "sm")   {left: -30px; width: calc(100% + 60px)}
+   @include screen("md", "lg")   {left: -40px; width: calc(100% + 80px)}
+   @include screen("xl", "xxl")  {left: -50px; width: calc(100% + 100px)}
+   box-shadow: $shadow-small-light;
+   will-change: transform;
+   transition: opacity .2s linear;
+   opacity: 0;
+}
+
+
+.characters {
+   .collapsible {
+      box-shadow: none;
+      border: none;
+
+      li {
+         .collapsible-header {
+            position: relative;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid color('background-light');
+
+            &:before {
+               @include active-background();
+            }
+
+            img {
+               width: 50px;
+               height: 50px;
+               border-radius: 50%;
+               object-fit: cover;
+               margin-right: 15px;
+               user-select: none;
+               @include circle-outline(color('primary'));
+            }
+
+            .text-normal {
+               width: 100%
+            }
+
+            .rate {
+               @include text-normal();
+               display: flex;
+               user-select: none;
+
+               i {
+                  color: color('danger');
+                  margin-right: 5px;
+               }
+            }
+         }
+
+         .collapsible-body {
+            border-bottom: 1px solid color('background-light');
+         }
+
+         &.active .collapsible-header {
+            border: none;
+
+            &:before {
+               opacity: 1;
+            }
+         }
+      }
+   }
+}
+
+.my-profile {
+   display: flex;
+   padding: 15px 0;
+   align-items: center;
+
+   img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      @include circle-outline(color('primary'));
+   }
+}
+
+.flex-right {
+   display: flex;
+   justify-content: flex-end;
+}
+.flex-left {
+   display: flex;
+   justify-content: flex-start;
+}
+.flex-center {
+   display: flex;
+   justify-content: center;
+}
+
+.comment {
+   &:not(:last-child) {
+      border-bottom: 1px solid color('background-light');
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+   }
+
+   .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+
+      .profile {
+         display: flex;
+         align-items: center;
+
+         img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+
+            @include circle-outline(color('primary'));
+         }
+      }
+   }
+
+   .body {
+      display: flex;
+
+      .rate {
+         flex-basis: 50px;
+         flex-shrink: 0;
+         flex-grow: 0;
+         padding-right: 10px;
+
+         .btn-flat {
+            width: 40px;
+            padding: 0;
+            text-align: center;
+         }
+      }
+   }
+
+
 }

@@ -14,6 +14,10 @@
       height: 100%;
       object-fit: cover;
    }
+
+   &.small {
+      height: 850px;
+   }
 }
 
 .home-header .page-header {
@@ -237,5 +241,22 @@ body.no-scroll .recent-post-header-container .recent-post-header {
    }
    @include screen("xs", "xl") {
       padding-right: 10px;
+   }
+}
+
+.anime-header {
+   background-color: color('primary');
+   height: 110px;
+   color: color('font-light');
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 15px;
+   position: relative;
+   z-index: 1;
+
+   h1 {
+      @include text-header();
    }
 }

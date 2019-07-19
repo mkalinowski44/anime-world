@@ -39,29 +39,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: color('primary-light');
+      background-color: color('light-transparent2');
       z-index: 0;
       will-change: transform;
       transition: opacity .2s linear;
       opacity: 0;
-   }
-
-   &:before {
-      content: "";
-      display: block;
-      @include screen("md", "xl") {width: 550px;}
-      @include screen("xs", "sm") {width: 400px;}
-      background-color: color('primary-light');
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      will-change: transform;
-      transition: transform .3s ease-out;
-      transform: scaleX(0);
-      transform-origin: left;
-      z-index: 0;
-      pointer-events: none;
    }
 
    &:hover .background {
@@ -78,10 +60,6 @@
       .line:nth-child(3) {
          transform: translate(-50%, -50%) rotate(45deg);
       }
-
-      &:before {
-         transform: scaleX(1);
-      }
    }
 }
 
@@ -92,24 +70,24 @@
    width: 100%;
    height: 70px;
    background-color: color('primary');
+   background: $primary-gradient;
    z-index: 3;
    display: flex;
    will-change: transform;
    transition: transform .3s ease-out;
-   box-shadow: $shadow-light;
+   box-shadow: $shadow-hard-light;
    padding-left: 70px;
+
+   .home-search {
+      background: none;
+      background-color: transparent;
+   }
 
    .dropdown-content {
       top: -70px;
-
-      li {
-         will-change: transform;
-         transition: background-color .2s linear;
-
-         a {
-            color: color('font-dark');
-         }
-      }
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
    }
 
    .user-panel {
@@ -143,7 +121,7 @@
          transform: translateY(0);
 
          .background {
-            background-color: color('primary-light');
+            background-color: color('light-transparent2');
          }
       }
    }
@@ -170,16 +148,15 @@
       }
 
       .image {
-         border: 1px solid color('font-light');
-         border-radius: 50%;
          width: 50px;
          height: 50px;
-         background-color: black;
 
          img {
-            width: 100%;
-            height: 100%;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
+            @include circle-outline(color('font-light'), 2px, 1px);
+            border-radius: 50%;
          }
       }
 
@@ -190,7 +167,7 @@
          width: 100%;
          height: 100%;
          z-index: -1;
-         background-color: color('primary-light');
+         background-color: color('light-transparent2');
          will-change: transform;
          transition: opacity .2s linear;
          opacity: 0;
@@ -233,6 +210,7 @@ body.no-scroll .nav-bar {
       width: 100%;
       height: 100%;
       background-color: color('primary-light');
+      background: $primary-light-gradient;
       position: relative;
       padding-top: 70px;
       display: flex;
@@ -240,7 +218,7 @@ body.no-scroll .nav-bar {
       align-items: center;
       overflow-y: auto;
       overflow-x: hidden;
-      box-shadow: $shadow-light;
+      box-shadow: $shadow-hard-light;
 
       @include screen("xxl", "xxl") {
          padding-bottom: 120px;
@@ -402,7 +380,7 @@ body.no-scroll .nav-bar {
                transform: translateY(0);
 
                .background {
-                  background-color: color('primary-light');
+                  background-color: color('light-transparent2');
                }
             }
          }
@@ -415,6 +393,7 @@ body.no-scroll .nav-bar {
          transform: translateX(0);
 
          .navigation {
+            background: none;
             background-color: color('dark-transparent');
             box-shadow: none;
 
@@ -433,7 +412,8 @@ body.no-scroll .nav-bar {
 
             .navigation {
                background-color: color('primary-light');
-               box-shadow: $shadow-light;
+               background: $primary-light-gradient;
+               box-shadow: $shadow-hard-light;
 
                .nav-list li .background {
                   background-color: color('dark-transparent2') !important;
@@ -450,4 +430,15 @@ body.no-scroll .nav-bar {
 
 .dropdown-content {
    min-width: 160px;
+   box-shadow: $shadow-light;
+   border-radius: 10px;
+
+   li {
+      will-change: transform;
+      transition: background-color .2s linear;
+
+      a {
+         color: color('font-dark');
+      }
+   }
 }
