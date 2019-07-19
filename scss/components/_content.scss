@@ -233,6 +233,16 @@ body::-webkit-scrollbar-thumb:hover {
    }
 }
 
+
+.stats {
+   display: flex;
+   align-items: center;
+
+   img {
+      margin: 0 15px 0 5px;
+   }
+}
+
 .categories-grid {
    display: grid;
    grid-gap: 5px;
@@ -648,6 +658,7 @@ body::-webkit-scrollbar-thumb:hover {
 
    .header {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       padding-bottom: 10px;
@@ -664,6 +675,23 @@ body::-webkit-scrollbar-thumb:hover {
             margin-right: 10px;
 
             @include circle-outline(color('primary'));
+         }
+      }
+
+      .btn-small {
+         margin: 15px 0;
+
+         @include screen("xs", "sm") {
+            &:not(i) {
+               font-size: 0;
+            }
+
+            i {
+               margin: 0;
+               transform: translate(-2px, 2px);
+            }
+
+            padding: 0 5px;
          }
       }
    }
@@ -684,6 +712,194 @@ body::-webkit-scrollbar-thumb:hover {
          }
       }
    }
+}
 
+.player-table {
+   overflow-x: auto;
+   display: block;
+   position: relative;
+   @include screen("xs", "xs")   {padding: 15px; width: calc(100% + 30px); left: -15px;}
+   @include screen("sm", "sm")   {padding: 30px; width: calc(100% + 60px); left: -30px;}
+   @include screen("md", "lg")   {padding: 40px; width: calc(100% + 80px); left: -40px;}
+   @include screen("xl", "xxl")  {padding: 50px; width: calc(100% + 100px); left: -50px}
 
+   tbody {
+      display: block;
+      min-width: 789px;
+   }
+
+   th, td {
+      @include text-normal();
+      text-align: center;
+      width: 100%;
+
+      &:first-child {
+         text-align: left;
+      }
+      &:last-child {
+         text-align: right;
+      }
+
+      @include screen("xs", "md") {
+         order: 1;
+
+         &:last-child {
+            order: 0;
+            text-align: left;
+         }
+
+         &:first-child {
+            text-align: center;
+         }
+
+         &:nth-child(5) {
+            text-align: right;
+         }
+      }
+   }
+
+   .stats {
+      justify-content: center;
+      margin: 0;
+
+      img {
+         margin-right: 0;
+      }
+   }
+
+   th {
+      padding-bottom: 30px;
+   }
+
+   .header {
+      border-bottom: none;
+   }
+
+   tr {
+      border-bottom: 1px solid color('background-light');
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:before {
+         @include active-background();
+      }
+
+      &.active {
+         border: none;
+
+         &:before {
+            opacity: 1;
+         }
+      }
+   }
+}
+
+.player {
+   position: relative;
+   padding-top: 56.25%;
+
+   iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.player-pagination {
+   display: flex;
+   justify-content: space-between;
+
+   a {
+      &:first-child {
+         padding-left: 15px;
+      }
+      &:last-child {
+         padding-right: 15px;
+      }
+   }
+}
+
+.movies-list {
+   list-style: none;
+   display: block;
+   padding: 0;
+   margin: 0;
+   overflow: hidden;
+   padding-bottom: 20px;
+
+   li {
+      padding: 0;
+      margin: 0;
+      display: block;
+
+      a {
+         display: flex;
+         padding: 15px;
+         position: relative;
+         justify-content: space-between;
+         align-items: center;
+         color: color('font-dark');
+         @include text-small();
+         z-index: 0;
+
+         &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: color('background-light');
+            z-index: -1;
+            will-change: transform;
+            transition: opacity .2s linear;
+            opacity: 0;
+         }
+
+         &:hover:before {
+            opacity: 1;
+         }
+
+         .col {
+            display: flex;
+            align-items: center;
+
+            .is-watched {
+               width: 5px;
+               height: 5px;
+               border-radius: 2.5px;
+               background-color: color('background-light');
+               margin-right: 10px;
+            }
+
+            .number {
+               margin-right: 10px;
+            }
+
+            .stats img {
+               margin: 0;
+               margin-left: 10px;
+               z-index: 1;
+            }
+         }
+
+         &.watched {
+            .is-watched {
+               background-color: color('success');
+            }
+         }
+
+         &.active {
+            &:before {
+               opacity: 1;
+            }
+            box-shadow: $shadow-small-light;
+            z-index: 1;
+         }
+      }
+   }
 }

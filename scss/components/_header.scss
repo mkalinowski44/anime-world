@@ -216,16 +216,12 @@
                   }
 
                   .stats {
-                     display: flex;
-                     align-items: center;
                      @include screen("xxl", "xxl") {
                         transform: skew(10deg);
                      }
 
                      img {
                         margin: 0 15px 0 5px;
-                        position: relative;
-                        z-index: 1;
                      }
                   }
                }

@@ -70,4 +70,15 @@ $primary-light-gradient: linear-gradient(135deg, rgba(110,198,255,1) 0%,rgba(150
          background-color: lighten($value, 10%);
       }
    }
+   .#{$name}-text {
+      color: $value;
+
+      &.btn:hover, &.btn:focus{
+         color: $value;
+      }
+
+      &.badge {
+         color: $value;
+      }
+   }
 }
