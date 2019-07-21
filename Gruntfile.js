@@ -47,6 +47,7 @@ module.exports = function(grunt) {
                      "js/app/search.js",
                      "js/app/counters.js",
                      "js/app/sliders.js",
+                     "js/app/sidebars.js",
                   ]
             }
          }
