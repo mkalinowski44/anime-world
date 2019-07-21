@@ -16,7 +16,8 @@
    }
 
    &.small {
-      height: 850px;
+      height: 80vh;
+      min-height: 150px
    }
 }
 
@@ -242,7 +243,8 @@ body.no-scroll .recent-post-header-container .recent-post-header {
 
 .anime-header {
    background-color: color('primary');
-   height: 110px;
+   background: $primary-gradient;
+   height: 180px;
    color: color('font-light');
    text-align: center;
    display: flex;
@@ -251,6 +253,8 @@ body.no-scroll .recent-post-header-container .recent-post-header {
    padding: 15px;
    position: relative;
    z-index: 1;
+   margin-bottom: -70px;
+   padding-bottom: 70px;
 
    h1 {
       @include text-header();

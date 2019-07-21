@@ -74,12 +74,11 @@ body::-webkit-scrollbar-thumb:hover {
          padding: 0;
          overflow: hidden;
 
-         .hide-show-right {
+         .hide-show-right, .hide-show-left {
             display: none;
             position: absolute;
             z-index: 11;
             top: 0;
-            right: 0;
             width: 50px;
             height: 110px;
             justify-content: center;
@@ -89,6 +88,12 @@ body::-webkit-scrollbar-thumb:hover {
             @include screen("xs", "lg") {
                display: flex;
             }
+         }
+         .hide-show-right {
+            right: 0;
+         }
+         .hide-show-left {
+            left: 0;
          }
 
          .left-col, .right-col {
@@ -103,6 +108,7 @@ body::-webkit-scrollbar-thumb:hover {
             overflow-y: auto;
             will-change: transform;
             transition: transform .3s ease-out;
+            max-width: 100%;
 
             .header {
                width: 100%;
@@ -144,6 +150,19 @@ body::-webkit-scrollbar-thumb:hover {
             }
          }
 
+         &.show-left {
+            @include screen("xl", "xxl") {
+               padding-left: 300px;
+            }
+
+            .left-col {
+               @include screen("xl", "xxl") {
+                  transform: translateX(0);
+                  box-shadow: $shadow-light;
+               }
+            }
+         }
+
          &.expand-right {
             .right-col {
                @include screen("xs", "lg") {
@@ -163,12 +182,38 @@ body::-webkit-scrollbar-thumb:hover {
                }
             }
          }
+
+         &.expand-left {
+            .left-col {
+               @include screen("xs", "lg") {
+                  transform: translateX(0);
+                  box-shadow: $shadow-light;
+               }
+            }
+
+            .hide-show-left {
+               transform: translateX(250px);
+               color: color('font-dark');
+
+               i {
+                  @include screen("xs", "lg") {
+                     transform: rotate(180deg);
+                  }
+               }
+            }
+         }
       }
    }
 
    &.home {
       .page-container {
          @include screen("xxl", "xxl")  {top: -70px;}
+      }
+   }
+
+   &.submenu {
+      .page-container {
+         top: -110px;
       }
    }
 }
@@ -573,9 +618,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .tabs {
-   background-color: color('primary-light');
+   background-color: color('light-transparent2');
    box-shadow: $shadow-small-light;
    height: 70px;
+   position: relative;
+   z-index: 2;
 
    .tab {
       height: 70px;
@@ -596,6 +643,7 @@ body::-webkit-scrollbar-thumb:hover {
 
    .indicator {
       background-color: color('font-light');
+      height: 3px;
    }
 }
 
