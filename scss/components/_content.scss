@@ -1,5 +1,6 @@
 html {
    scroll-behavior: smooth;
+   @include text-normal();
 }
 
 * {
@@ -225,11 +226,11 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 .separator {
-   height: 46px;
+   height: 50px;
 }
 
 .small-separator {
-   height: 20px;
+   height: 30px;
 }
 
 .movie-card {
@@ -327,30 +328,21 @@ body::-webkit-scrollbar-thumb:hover {
    flex-wrap: wrap;
    align-items: center;
 
-   .stat {
-      display: flex;
-      align-items: center;
-      margin-right: 10px;
-
-      span {
-         margin-right: 5px;
-         @include text-small();
-      }
-
-      img {
-         width: 1.2em;
-         height: 1.2em;
-      }
-   }
 }
 
 
 .stats {
    display: flex;
+   flex-wrap: wrap;
    align-items: center;
+   @include text-small();
 
    img {
       margin: 0 15px 0 5px;
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      transform: translateY(-1px);
    }
 }
 
@@ -1100,6 +1092,174 @@ body::-webkit-scrollbar-thumb:hover {
 
             .button-container {
                text-align: left;
+            }
+         }
+      }
+   }
+}
+
+.ranking-list {
+   .item {
+      display: flex;
+      align-items: center;
+
+      @include screen("xs", "sm") {
+         flex-direction: column;
+         align-items: flex-start;
+      }
+
+      &:not(:last-child) {
+         margin-bottom: 25px;
+         padding-bottom: 25px;
+         border-bottom: 1px solid color('background-light');
+      }
+
+      .number {
+         @include text-big();
+         align-self: flex-start;
+         margin-right: 20px;
+         flex-shrink: 0;
+         flex-grow: 0;
+         @include screen("md", "xxl") {
+            flex-basis: 85px;
+         }
+      }
+
+      .image {
+         width: 100%;
+         flex-shrink: 0;
+         flex-grow: 0;
+         @include screen("md", "md") {
+            flex-basis: 200px;
+            margin-right: 20px;
+         }
+         @include screen("lg", "xxl") {
+            flex-basis: 300px;
+            margin-right: 50px;
+         }
+         @include screen("xs", "sm") {
+            margin-bottom: 10px;
+         }
+
+         .image-container {
+            width: 100%;
+            padding-top: 65%;
+            position: relative;
+
+            img {
+               width: 100%;
+               height: 100%;
+               top: 0;
+               left: 0;
+               position: absolute;
+               border-radius: 10px;
+            }
+         }
+      }
+
+      .information {
+         div:not(:last-child) {
+            margin-bottom: 5px;
+         }
+
+         .text-subheader a {
+            color: inherit;
+         }
+
+         .rate {
+            @include text-small();
+            display: flex;
+            align-items: center;
+
+            i {
+               font-size: 18px;
+               color: color('danger');
+               margin-right: 12px;
+               transform: translateY(-2px);
+            }
+         }
+      }
+
+      &:nth-child(2) .image {
+         width: 80%;
+         @include screen("md", "md") {
+            flex-basis: 175px;
+         }
+         @include screen("lg", "xxl") {
+            flex-basis: 250px;
+         }
+      }
+
+      &:nth-child(3) .image {
+         width: 60%;
+         @include screen("md", "md") {
+            flex-basis: 150px;
+         }
+         @include screen("lg", "xxl") {
+            flex-basis: 200px;
+         }
+      }
+
+      &:nth-child(1n+4) {
+         .number {
+            @include screen("md", "xxl") {
+               align-self: center;
+            }
+         }
+         .information {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            div {
+               margin-right: 15px;
+            }
+         }
+      }
+
+      &.character {
+         align-items: center;
+         .image {
+            flex-basis: 180px;
+
+            .image-container {
+               padding-top: 100%;
+
+               img {
+                  border-radius: 50%;
+               }
+            }
+         }
+
+         &:nth-child(2) .image {
+            flex-basis: 140px;
+         }
+
+         &:nth-child(3) .image {
+            flex-basis: 100px;
+         }
+
+         &:nth-child(1n+4) {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .image {
+               flex-basis: 60px;
+               margin-right: 30px;
+            }
+
+            .number {
+               align-self: center;
+            }
+         }
+
+         .information {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            div {
+               margin-right: 15px;
             }
          }
       }
