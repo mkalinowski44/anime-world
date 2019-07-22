@@ -9907,7 +9907,7 @@ input[type=range]::-ms-thumb {
   position: relative;
   z-index: 1;
   margin-bottom: -70px;
-  padding-bottom: 70px;
+  padding-bottom: 85px;
 }
 .anime-header h1 {
   font-family: Roboto;
