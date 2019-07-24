@@ -564,18 +564,35 @@ body::-webkit-scrollbar-thumb:hover {
    .page {
       display: none;
    }
-
-   @include screen("xxl", "xxl") {
-      @for $i from 2 to 14 {
-         .page:nth-child(#{$i}) {
-            display: block;
+   &:not(.small) {
+      @include screen("xxl", "xxl") {
+         @for $i from 2 to 14 {
+            .page:nth-child(#{$i}) {
+               display: block;
+            }
+         }
+      }
+      @include screen("xl", "xl") {
+         @for $i from 2 to 12 {
+            .page:nth-child(#{$i}) {
+               display: block;
+            }
          }
       }
    }
-   @include screen("xl", "xl") {
-      @for $i from 2 to 12 {
-         .page:nth-child(#{$i}) {
-            display: block;
+   &.small {
+      @include screen("xxl", "xxl") {
+         @for $i from 2 to 12 {
+            .page:nth-child(#{$i}) {
+               display: block;
+            }
+         }
+      }
+      @include screen("xl", "xl") {
+         @for $i from 2 to 9 {
+            .page:nth-child(#{$i}) {
+               display: block;
+            }
          }
       }
    }
@@ -1263,5 +1280,114 @@ body::-webkit-scrollbar-thumb:hover {
             }
          }
       }
+   }
+}
+
+
+.sidebar-subjects {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+
+   li {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: relative;
+
+      a {
+         color: inherit;
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+         @include text-small();
+         padding: 15px;
+      }
+
+      &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: color('background-light');
+         will-change: transform;
+         opacity: 0;
+         transition: opacity .2s linear;
+      }
+
+      &:hover:before {
+         opacity: 1;
+      }
+   }
+}
+
+.sidebar-padding {
+   padding: 0 15px;
+}
+
+.threads-list {
+   display: grid;
+   @include screen("xs", "xs")   {grid-gap: 15px;}
+   @include screen("sm", "sm")   {grid-gap: 30px;}
+   @include screen("md", "lg")   {grid-gap: 40px;}
+   @include screen("xl", "xxl")  {grid-gap: 50px;}
+   grid-template-columns: 1fr 1fr;
+   @include screen("xs", "sm") {
+      grid-template-columns: 1fr;
+   }
+
+   a.text-normal, a.text-subheader {
+      color: inherit;
+   }
+
+   .item {
+      background-color: color('background-light');
+      border-radius: 15px;
+      box-shadow: $shadow-small-light;
+      height: 100%;
+      @include screen("xs", "xs")   {padding: 15px;}
+      @include screen("sm", "sm")   {padding: 30px;}
+      @include screen("md", "lg")   {padding: 40px;}
+      @include screen("xl", "xxl")  {padding: 50px;}
+
+      .information {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 10px;
+         margin-top: 5px;
+      }
+
+      .categories {
+         margin-bottom: 10px;
+      }
+   }
+}
+
+.subjects-list {
+   display: grid;
+   @include screen("xs", "xs")   {grid-gap: 15px;}
+   @include screen("sm", "sm")   {grid-gap: 30px;}
+   @include screen("md", "lg")   {grid-gap: 40px;}
+   @include screen("xl", "xxl")  {grid-gap: 50px;}
+   grid-template-columns: 1fr 1fr;
+   @include screen("xs", "sm") {
+      grid-template-columns: 1fr;
+   }
+
+   .item {
+      background-color: color('background-light');
+      border-radius: 15px;
+      box-shadow: $shadow-small-light;
+      height: 100%;
+      @include screen("xs", "xs")   {padding: 15px;}
+      @include screen("sm", "sm")   {padding: 30px;}
+      @include screen("md", "lg")   {padding: 40px;}
+      @include screen("xl", "xxl")  {padding: 50px;}
+      color: color('font-dark');
+      display: flex;
+      justify-content: space-between;
    }
 }
