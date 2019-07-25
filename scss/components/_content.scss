@@ -233,77 +233,6 @@ body::-webkit-scrollbar-thumb:hover {
    height: 30px;
 }
 
-.movie-card {
-   padding: 0 10px;
-   .image, .text-subheader, .categories {
-      margin-bottom: 10px;
-   }
-
-   .text-subheader {
-      display: block;
-      color: color('font-dark');
-   }
-
-   .image {
-      display: block;
-      width: 100%;
-      padding-top: 65%;
-      position: relative;
-      cursor: pointer;
-
-      img {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         border-radius: 10px;
-         object-fit: cover;
-         z-index: 0;
-      }
-
-      .background {
-         z-index: 1;
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         border-radius: 10px;
-         background-color: color('dark-transparent');
-         color: color('font-light');
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         will-change: transform;
-         transition: opacity .2s linear;
-         opacity: 0;
-
-         i {
-            font-size: 40px;
-         }
-      }
-
-      &:hover .background {
-         opacity: 1;
-      }
-   }
-
-   .desc {
-      height: 14em;
-      display: block;
-      display: -webkit-box;
-      -webkit-line-clamp: 9;
-      -webkit-box-orient: vertical;
-      overflow: hidden !important;
-   }
-
-   .btn-large {
-      width: 100%;
-      margin-bottom: 10px;
-   }
-}
-
 .categories {
    display: flex;
    flex-wrap: wrap;
@@ -327,9 +256,7 @@ body::-webkit-scrollbar-thumb:hover {
    display: flex;
    flex-wrap: wrap;
    align-items: center;
-
 }
-
 
 .stats {
    display: flex;
@@ -343,142 +270,6 @@ body::-webkit-scrollbar-thumb:hover {
       height: 18px;
       object-fit: contain;
       transform: translateY(-1px);
-   }
-}
-
-.categories-grid {
-   display: grid;
-   grid-gap: 5px;
-
-   @include screen("xxl", "xxl") {
-      grid-template-columns: repeat(4, 1fr);
-   }
-   @include screen("lg", "xl") {
-      grid-template-columns: 1fr 1fr 1fr;
-   }
-   @include screen("md", "md") {
-      grid-template-columns: 1fr 1fr;
-   }
-   @include screen("xs", "sm") {
-      grid-template-columns: 1fr;
-   }
-
-   .category {
-      display: flex;
-      background-color: color('background-light');
-      align-items: center;
-      padding: 12px;
-      @include text-subheader();
-      color: color('font-dark');
-      position: relative;
-
-      i {
-         font-size: 26px;
-         margin-right: 12px;
-      }
-
-      .background {
-         position: absolute;
-         z-index: 0;
-         background-color: color('dark-transparent2');
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         will-change: transform;
-         transition: opacity .2s linear;
-         opacity: 0;
-      }
-
-      &:hover .background {
-         opacity: 1;
-      }
-   }
-}
-
-.movie-grid {
-   display: grid;
-   @include screen("xs", "xs") {
-      grid-template-columns: 1fr;
-   }
-   @include screen("sm", "sm") {
-      grid-template-columns: 1fr 1fr;
-   }
-   @include screen("md", "md") {
-      grid-template-columns: 1fr 1fr 1fr;
-   }
-   @include screen("lg", "xxl") {
-      grid-template-columns: repeat(4, 1fr);
-   }
-
-   grid-gap: 20px;
-
-   .movie-card {
-      padding: 0;
-   }
-}
-
-.ranking {
-   margin-top: 50px;
-   text-align: center;
-
-   @include screen("xl", "xxl") {
-      padding: 0 50px;
-   }
-   @include screen("md", "lg") {
-      padding: 0 25px;
-   }
-   @include screen("xs", "sm") {
-      padding: 0 15px;
-   }
-
-   .pos1 {
-      width: 50%;
-      position: relative;
-      left: 25%;
-      margin-top: 30px;
-   }
-
-   .pos2 {
-      width: 40%;
-      margin-top: 20px;
-   }
-
-   .pos3 {
-      width: 30%;
-      position: relative;
-      left: 70%;
-      margin-top: -20%;
-   }
-
-   .image {
-      widows: 100%;
-      padding-top: 100%;
-      position: relative;
-
-      img {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         border-radius: 50%;
-         object-fit: cover;
-         @include circle-outline(color('primary'), 5px);
-         will-change: transform;
-         transition: transform .2s ease-out;
-
-         &:hover {
-            transform: scale(1.1);
-         }
-      }
-   }
-
-   .text-small-header {
-      margin-top: 10px;
-      width: 200%;
-      position: relative;
-      left: -50%;
    }
 }
 
@@ -631,6 +422,21 @@ body::-webkit-scrollbar-thumb:hover {
    }
 }
 
+.player-pagination {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+
+   a {
+      &:first-child {
+         padding-left: 15px;
+      }
+      &:last-child {
+         padding-right: 15px;
+      }
+   }
+}
+
 .tabs {
    background-color: color('light-transparent2');
    box-shadow: $shadow-small-light;
@@ -661,87 +467,59 @@ body::-webkit-scrollbar-thumb:hover {
    }
 }
 
+.breadcrumbs {
+   background-color: color('light-transparent2');
+   box-shadow: $shadow-small-light;
+   height: 70px;
+   position: relative;
+   z-index: 2;
+   margin: 0;
+   overflow-x: auto;
+   list-style: none;
+   display: flex;
+   color: color('font-light');
+
+   li {
+      @include text-subheader();
+      line-height: 70px;
+      display: block;
+
+      a {
+         display: block;
+         color: inherit;
+         padding: 0 30px;
+         position: relative;
+
+         &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: color('light-transparent2');
+            will-change: transform;
+            transition: opacity .2s linear;
+            opacity: 0;
+         }
+
+         &:hover:before {
+            opacity: 1;
+         }
+      }
+   }
+
+   i {
+      line-height: 70px;
+   }
+}
+
 .tab-content {
    @include screen("xs", "xs")   {padding: 15px;}
    @include screen("sm", "sm")   {padding: 30px;}
    @include screen("md", "lg")   {padding: 40px;}
    @include screen("xl", "xxl")  {padding: 50px;}
-}
-
-@mixin active-background() {
-   content: "";
-   position: absolute;
-   height: 100%;
-   background-color: color('background-light');
-   z-index: -1;
-   top: -1px;
-   @include screen("xs", "xs")   {left: -15px; width: calc(100% + 30px)}
-   @include screen("sm", "sm")   {left: -30px; width: calc(100% + 60px)}
-   @include screen("md", "lg")   {left: -40px; width: calc(100% + 80px)}
-   @include screen("xl", "xxl")  {left: -50px; width: calc(100% + 100px)}
-   box-shadow: $shadow-small-light;
-   will-change: transform;
-   transition: opacity .2s linear;
-   opacity: 0;
-}
-
-
-.characters {
-   .collapsible {
-      box-shadow: none;
-      border: none;
-
-      li {
-         .collapsible-header {
-            position: relative;
-            background-color: transparent;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid color('background-light');
-
-            &:before {
-               @include active-background();
-            }
-
-            img {
-               width: 50px;
-               height: 50px;
-               border-radius: 50%;
-               object-fit: cover;
-               margin-right: 15px;
-               user-select: none;
-               @include circle-outline(color('primary'));
-            }
-
-            .text-normal {
-               width: 100%
-            }
-
-            .rate {
-               @include text-normal();
-               display: flex;
-               user-select: none;
-
-               i {
-                  color: color('danger');
-                  margin-right: 5px;
-               }
-            }
-         }
-
-         .collapsible-body {
-            border-bottom: 1px solid color('background-light');
-         }
-
-         &.active .collapsible-header {
-            border: none;
-
-            &:before {
-               opacity: 1;
-            }
-         }
-      }
-   }
 }
 
 .my-profile {
@@ -762,632 +540,39 @@ body::-webkit-scrollbar-thumb:hover {
 .flex-right {
    display: flex;
    justify-content: flex-end;
+   flex-wrap: wrap;
 }
 .flex-left {
    display: flex;
    justify-content: flex-start;
+   flex-wrap: wrap;
 }
 .flex-center {
    display: flex;
    justify-content: center;
-}
-
-.comment {
-   &:not(:last-child) {
-      border-bottom: 1px solid color('background-light');
-      margin-bottom: 30px;
-      padding-bottom: 30px;
-   }
-
-   .header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 10px;
-
-      .profile {
-         display: flex;
-         align-items: center;
-
-         img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-
-            @include circle-outline(color('primary'));
-         }
-      }
-
-      .btn-small {
-         margin: 15px 0;
-
-         @include screen("xs", "sm") {
-            &:not(i) {
-               font-size: 0;
-            }
-
-            i {
-               margin: 0;
-               transform: translate(-2px, 2px);
-            }
-
-            padding: 0 5px;
-         }
-      }
-   }
-
-   .body {
-      display: flex;
-
-      .rate {
-         flex-basis: 50px;
-         flex-shrink: 0;
-         flex-grow: 0;
-         padding-right: 10px;
-
-         .btn-flat {
-            width: 40px;
-            padding: 0;
-            text-align: center;
-         }
-      }
-   }
-}
-
-.player-table {
-   overflow-x: auto;
-   display: block;
-   position: relative;
-   @include screen("xs", "xs")   {padding: 15px; width: calc(100% + 30px); left: -15px;}
-   @include screen("sm", "sm")   {padding: 30px; width: calc(100% + 60px); left: -30px;}
-   @include screen("md", "lg")   {padding: 40px; width: calc(100% + 80px); left: -40px;}
-   @include screen("xl", "xxl")  {padding: 50px; width: calc(100% + 100px); left: -50px}
-
-   tbody {
-      display: block;
-      min-width: 789px;
-   }
-
-   th, td {
-      @include text-normal();
-      text-align: center;
-      width: 100%;
-
-      &:first-child {
-         text-align: left;
-      }
-      &:last-child {
-         text-align: right;
-      }
-
-      @include screen("xs", "md") {
-         order: 1;
-
-         &:last-child {
-            order: 0;
-            text-align: left;
-         }
-
-         &:first-child {
-            text-align: center;
-         }
-
-         &:nth-child(5) {
-            text-align: right;
-         }
-      }
-   }
-
-   .stats {
-      justify-content: center;
-      margin: 0;
-
-      img {
-         margin-right: 0;
-      }
-   }
-
-   th {
-      padding-bottom: 30px;
-   }
-
-   .header {
-      border-bottom: none;
-   }
-
-   tr {
-      border-bottom: 1px solid color('background-light');
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      &:before {
-         @include active-background();
-      }
-
-      &.active {
-         border: none;
-
-         &:before {
-            opacity: 1;
-         }
-      }
-   }
-}
-
-.player {
-   position: relative;
-   padding-top: 56.25%;
-
-   iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-   }
-}
-
-.player-pagination {
-   display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
-
-   a {
-      &:first-child {
-         padding-left: 15px;
-      }
-      &:last-child {
-         padding-right: 15px;
-      }
-   }
 }
-
-.movies-list {
-   list-style: none;
-   display: block;
-   padding: 0;
-   margin: 0;
-   overflow: hidden;
-   padding-bottom: 20px;
-
-   li {
-      padding: 0;
-      margin: 0;
-      display: block;
-
-      a {
-         display: flex;
-         padding: 15px;
-         position: relative;
-         justify-content: space-between;
-         align-items: center;
-         color: color('font-dark');
-         @include text-small();
-         z-index: 0;
-
-         &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: color('background-light');
-            z-index: -1;
-            will-change: transform;
-            transition: opacity .2s linear;
-            opacity: 0;
-         }
-
-         &:hover:before {
-            opacity: 1;
-         }
-
-         .col {
-            display: flex;
-            align-items: center;
-
-            .is-watched {
-               width: 5px;
-               height: 5px;
-               border-radius: 2.5px;
-               background-color: color('background-light');
-               margin-right: 10px;
-            }
-
-            .number {
-               margin-right: 10px;
-            }
-
-            .stats img {
-               margin: 0;
-               margin-left: 10px;
-               z-index: 1;
-            }
-         }
-
-         &.watched {
-            .is-watched {
-               background-color: color('success');
-            }
-         }
-
-         &.active {
-            &:before {
-               opacity: 1;
-            }
-            box-shadow: $shadow-small-light;
-            z-index: 1;
-         }
-      }
-
-      &.information {
-         text-align: center;
-         @include text-small();
-         color: color('placeholder-light');
-         height: 50px;
-         padding: 15px;
-      }
-   }
-}
-
-.genre {
+.flex-between {
    display: flex;
-   @include screen("xs", "sm") {
-      flex-direction: column;
-   }
-
-   .image, .info-col {
-      flex-shrink: 0;
-      flex-grow: 0;
-   }
-
-   .image {
-      @include screen("xl", "xxl") {
-         flex-basis: 30%;
-      }
-      @include screen("md", "lg") {
-         flex-basis: 40%;
-      }
-
-      @include screen("xs", "sm") {
-         margin-bottom: 30px;
-      }
-
-      .image-container {
-         width: 100%;
-         padding-bottom: 100%;
-         position: relative;
-
-         img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-            object-fit: cover;
-         }
-      }
-   }
-
-   .info-col {
-
-      @include screen("xl", "xxl") {
-         flex-basis: 70%;
-      }
-      @include screen("md", "lg") {
-         flex-basis: 60%;
-      }
-
-      @include screen("md", "xxl") {
-         padding-left: 30px;
-      }
-
-      .button-container {
-         text-align: right;
-      }
-   }
-
-   &:not(:last-child) {
-      margin-bottom: 50px;
-   }
-
-   &:nth-child(even) {
-      @include screen("md", "xxl") {
-         flex-direction: row-reverse;
-
-         .info-col {
-            padding-right: 30px;
-            padding-left: 0;
-            text-align: right;
-
-            .button-container {
-               text-align: left;
-            }
-         }
-      }
-   }
+   justify-content: space-between;
+   flex-wrap: wrap;
 }
 
-.ranking-list {
-   .item {
-      display: flex;
-      align-items: center;
-
-      @include screen("xs", "sm") {
-         flex-direction: column;
-         align-items: flex-start;
-      }
-
-      &:not(:last-child) {
-         margin-bottom: 25px;
-         padding-bottom: 25px;
-         border-bottom: 1px solid color('background-light');
-      }
-
-      .number {
-         @include text-big();
-         align-self: flex-start;
-         margin-right: 20px;
-         flex-shrink: 0;
-         flex-grow: 0;
-         @include screen("md", "xxl") {
-            flex-basis: 85px;
-         }
-      }
-
-      .image {
-         width: 100%;
-         flex-shrink: 0;
-         flex-grow: 0;
-         @include screen("md", "md") {
-            flex-basis: 200px;
-            margin-right: 20px;
-         }
-         @include screen("lg", "xxl") {
-            flex-basis: 300px;
-            margin-right: 50px;
-         }
-         @include screen("xs", "sm") {
-            margin-bottom: 10px;
-         }
-
-         .image-container {
-            width: 100%;
-            padding-top: 65%;
-            position: relative;
-
-            img {
-               width: 100%;
-               height: 100%;
-               top: 0;
-               left: 0;
-               position: absolute;
-               border-radius: 10px;
-            }
-         }
-      }
-
-      .information {
-         div:not(:last-child) {
-            margin-bottom: 5px;
-         }
-
-         .text-subheader a {
-            color: inherit;
-         }
-
-         .rate {
-            @include text-small();
-            display: flex;
-            align-items: center;
-
-            i {
-               font-size: 18px;
-               color: color('danger');
-               margin-right: 12px;
-               transform: translateY(-2px);
-            }
-         }
-      }
-
-      &:nth-child(2) .image {
-         width: 80%;
-         @include screen("md", "md") {
-            flex-basis: 175px;
-         }
-         @include screen("lg", "xxl") {
-            flex-basis: 250px;
-         }
-      }
-
-      &:nth-child(3) .image {
-         width: 60%;
-         @include screen("md", "md") {
-            flex-basis: 150px;
-         }
-         @include screen("lg", "xxl") {
-            flex-basis: 200px;
-         }
-      }
-
-      &:nth-child(1n+4) {
-         .number {
-            @include screen("md", "xxl") {
-               align-self: center;
-            }
-         }
-         .information {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-
-            div {
-               margin-right: 15px;
-            }
-         }
-      }
-
-      &.character {
-         align-items: center;
-         .image {
-            flex-basis: 180px;
-
-            .image-container {
-               padding-top: 100%;
-
-               img {
-                  border-radius: 50%;
-               }
-            }
-         }
-
-         &:nth-child(2) .image {
-            flex-basis: 140px;
-         }
-
-         &:nth-child(3) .image {
-            flex-basis: 100px;
-         }
-
-         &:nth-child(1n+4) {
-            flex-direction: row;
-            flex-wrap: wrap;
-
-            .image {
-               flex-basis: 60px;
-               margin-right: 30px;
-            }
-
-            .number {
-               align-self: center;
-            }
-         }
-
-         .information {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-
-            div {
-               margin-right: 15px;
-            }
-         }
-      }
-   }
+.flex-align-center {
+   align-items: center;
 }
 
-
-.sidebar-subjects {
-   list-style: none;
-   margin: 0;
-   padding: 0;
-
-   li {
-      margin: 0;
-      padding: 0;
-      display: block;
-      position: relative;
-
-      a {
-         color: inherit;
-         display: flex;
-         width: 100%;
-         justify-content: space-between;
-         @include text-small();
-         padding: 15px;
-      }
-
-      &:before {
-         content: "";
-         display: block;
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         background-color: color('background-light');
-         will-change: transform;
-         opacity: 0;
-         transition: opacity .2s linear;
-      }
-
-      &:hover:before {
-         opacity: 1;
-      }
-   }
+.small-container {
+   margin: 0 auto;
+   max-width: 800px;
 }
 
-.sidebar-padding {
-   padding: 0 15px;
-}
+.contact-send-row {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
 
-.threads-list {
-   display: grid;
-   @include screen("xs", "xs")   {grid-gap: 15px;}
-   @include screen("sm", "sm")   {grid-gap: 30px;}
-   @include screen("md", "lg")   {grid-gap: 40px;}
-   @include screen("xl", "xxl")  {grid-gap: 50px;}
-   grid-template-columns: 1fr 1fr;
-   @include screen("xs", "sm") {
-      grid-template-columns: 1fr;
-   }
-
-   a.text-normal, a.text-subheader {
-      color: inherit;
-   }
-
-   .item {
-      background-color: color('background-light');
-      border-radius: 15px;
-      box-shadow: $shadow-small-light;
-      height: 100%;
-      @include screen("xs", "xs")   {padding: 15px;}
-      @include screen("sm", "sm")   {padding: 30px;}
-      @include screen("md", "lg")   {padding: 40px;}
-      @include screen("xl", "xxl")  {padding: 50px;}
-
-      .information {
-         display: flex;
-         justify-content: space-between;
-         margin-bottom: 10px;
-         margin-top: 5px;
-      }
-
-      .categories {
-         margin-bottom: 10px;
-      }
-   }
-}
-
-.subjects-list {
-   display: grid;
-   @include screen("xs", "xs")   {grid-gap: 15px;}
-   @include screen("sm", "sm")   {grid-gap: 30px;}
-   @include screen("md", "lg")   {grid-gap: 40px;}
-   @include screen("xl", "xxl")  {grid-gap: 50px;}
-   grid-template-columns: 1fr 1fr;
-   @include screen("xs", "sm") {
-      grid-template-columns: 1fr;
-   }
-
-   .item {
-      background-color: color('background-light');
-      border-radius: 15px;
-      box-shadow: $shadow-small-light;
-      height: 100%;
-      @include screen("xs", "xs")   {padding: 15px;}
-      @include screen("sm", "sm")   {padding: 30px;}
-      @include screen("md", "lg")   {padding: 40px;}
-      @include screen("xl", "xxl")  {padding: 50px;}
-      color: color('font-dark');
-      display: flex;
-      justify-content: space-between;
+   button {
+      margin-top: 15px;
    }
 }

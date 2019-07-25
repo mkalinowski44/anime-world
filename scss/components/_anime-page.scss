@@ -1,0 +1,235 @@
+@mixin active-background() {
+   content: "";
+   position: absolute;
+   height: 100%;
+   background-color: color('background-light');
+   z-index: -1;
+   top: -1px;
+   @include screen("xs", "xs")   {left: -15px; width: calc(100% + 30px)}
+   @include screen("sm", "sm")   {left: -30px; width: calc(100% + 60px)}
+   @include screen("md", "lg")   {left: -40px; width: calc(100% + 80px)}
+   @include screen("xl", "xxl")  {left: -50px; width: calc(100% + 100px)}
+   box-shadow: $shadow-small-light;
+   will-change: transform;
+   transition: opacity .2s linear;
+   opacity: 0;
+}
+
+
+.characters {
+   .collapsible {
+      box-shadow: none;
+      border: none;
+
+      li {
+         .collapsible-header {
+            position: relative;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid color('background-light');
+
+            &:before {
+               @include active-background();
+            }
+
+            img {
+               width: 50px;
+               height: 50px;
+               border-radius: 50%;
+               object-fit: cover;
+               margin-right: 15px;
+               user-select: none;
+               @include circle-outline(color('primary'));
+            }
+
+            .text-normal {
+               width: 100%
+            }
+
+            .rate {
+               @include text-normal();
+               display: flex;
+               user-select: none;
+
+               i {
+                  color: color('danger');
+                  margin-right: 5px;
+               }
+            }
+         }
+
+         .collapsible-body {
+            border-bottom: 1px solid color('background-light');
+         }
+
+         &.active .collapsible-header {
+            border: none;
+
+            &:before {
+               opacity: 1;
+            }
+         }
+      }
+   }
+}
+
+.comment {
+   &:not(:last-child) {
+      border-bottom: 1px solid color('background-light');
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+   }
+
+   .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+
+      .profile {
+         display: flex;
+         align-items: center;
+
+         img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+
+            @include circle-outline(color('primary'));
+         }
+      }
+
+      .btn-small {
+         margin: 15px 0;
+
+         @include screen("xs", "sm") {
+            &:not(i) {
+               font-size: 0;
+            }
+
+            i {
+               margin: 0;
+               transform: translate(-2px, 2px);
+            }
+
+            padding: 0 5px;
+         }
+      }
+   }
+
+   .body {
+      display: flex;
+
+      .rate {
+         flex-basis: 50px;
+         flex-shrink: 0;
+         flex-grow: 0;
+         padding-right: 10px;
+
+         .btn-flat {
+            width: 40px;
+            padding: 0;
+            text-align: center;
+         }
+      }
+   }
+}
+
+.player-table {
+   overflow-x: auto;
+   display: block;
+   position: relative;
+   @include screen("xs", "xs")   {padding: 15px; width: calc(100% + 30px); left: -15px;}
+   @include screen("sm", "sm")   {padding: 30px; width: calc(100% + 60px); left: -30px;}
+   @include screen("md", "lg")   {padding: 40px; width: calc(100% + 80px); left: -40px;}
+   @include screen("xl", "xxl")  {padding: 50px; width: calc(100% + 100px); left: -50px}
+
+   tbody {
+      display: block;
+      min-width: 789px;
+   }
+
+   th, td {
+      @include text-normal();
+      text-align: center;
+      width: 100%;
+
+      &:first-child {
+         text-align: left;
+      }
+      &:last-child {
+         text-align: right;
+      }
+
+      @include screen("xs", "md") {
+         order: 1;
+
+         &:last-child {
+            order: 0;
+            text-align: left;
+         }
+
+         &:first-child {
+            text-align: center;
+         }
+
+         &:nth-child(5) {
+            text-align: right;
+         }
+      }
+   }
+
+   .stats {
+      justify-content: center;
+      margin: 0;
+
+      img {
+         margin-right: 0;
+      }
+   }
+
+   th {
+      padding-bottom: 30px;
+   }
+
+   .header {
+      border-bottom: none;
+   }
+
+   tr {
+      border-bottom: 1px solid color('background-light');
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:before {
+         @include active-background();
+      }
+
+      &.active {
+         border: none;
+
+         &:before {
+            opacity: 1;
+         }
+      }
+   }
+}
+
+.player {
+   position: relative;
+   padding-top: 56.25%;
+
+   iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+}

@@ -1,0 +1,213 @@
+// Forum
+.sidebar-subjects {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+
+   li {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: relative;
+
+      a {
+         color: inherit;
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+         @include text-small();
+         padding: 15px;
+      }
+
+      &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: color('background-light');
+         will-change: transform;
+         opacity: 0;
+         transition: opacity .2s linear;
+         z-index: -1;
+      }
+
+      &:hover:before {
+         opacity: 1;
+      }
+
+      &.active {
+         z-index: 1;
+         &:before {
+            opacity: 1;
+            box-shadow: $shadow-small-light;
+         }
+      }
+   }
+}
+
+.sidebar-padding {
+   padding: 0 15px;
+}
+
+.threads-list {
+   display: grid;
+   @include screen("xs", "xs")   {grid-gap: 15px;}
+   @include screen("sm", "sm")   {grid-gap: 30px;}
+   @include screen("md", "lg")   {grid-gap: 40px;}
+   @include screen("xl", "xxl")  {grid-gap: 50px;}
+   grid-template-columns: 1fr 1fr;
+   @include screen("xs", "sm") {
+      grid-template-columns: 1fr;
+   }
+
+   a.text-normal, a.text-subheader {
+      color: inherit;
+   }
+
+   .item {
+      background-color: color('background-light');
+      border-radius: 15px;
+      box-shadow: $shadow-small-light;
+      height: 100%;
+      @include screen("xs", "xs")   {padding: 15px;}
+      @include screen("sm", "sm")   {padding: 30px;}
+      @include screen("md", "lg")   {padding: 40px;}
+      @include screen("xl", "xxl")  {padding: 50px;}
+
+      .information {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 10px;
+         margin-top: 5px;
+      }
+
+      .categories {
+         margin-bottom: 10px;
+      }
+   }
+}
+
+.subjects-list {
+   display: grid;
+   @include screen("xs", "xs")   {grid-gap: 15px;}
+   @include screen("sm", "sm")   {grid-gap: 30px;}
+   @include screen("md", "lg")   {grid-gap: 40px;}
+   @include screen("xl", "xxl")  {grid-gap: 50px;}
+   grid-template-columns: 1fr 1fr;
+   @include screen("xs", "sm") {
+      grid-template-columns: 1fr;
+   }
+
+   .item {
+      background-color: color('background-light');
+      border-radius: 15px;
+      box-shadow: $shadow-small-light;
+      height: 100%;
+      @include screen("xs", "xs")   {padding: 15px;}
+      @include screen("sm", "sm")   {padding: 30px;}
+      @include screen("md", "lg")   {padding: 40px;}
+      @include screen("xl", "xxl")  {padding: 50px;}
+      color: color('font-dark');
+      display: flex;
+      justify-content: space-between;
+   }
+}
+
+
+.comment-input {
+   background-color: color('background-light');
+   @include screen("xs", "xs")   {padding: 15px;}
+   @include screen("sm", "sm")   {padding: 30px;}
+   @include screen("md", "lg")   {padding: 40px;}
+   @include screen("xl", "xxl")  {padding: 50px;}
+   border-radius: 15px;
+   box-shadow: $shadow-small-light;
+   margin-bottom: 50px;
+}
+
+.post-list {
+   .post {
+      display: flex;
+
+      &:not(:first-child) {
+         padding-bottom: 50px;
+         border-bottom: 1px solid color('background-light');
+         margin-bottom: 50px;
+      }
+
+      .margin {
+         margin-bottom: 10px;
+      }
+
+      .user-col {
+         flex-shrink: 0;
+         flex-grow: 0;
+         text-align: center;
+
+         @include screen("xl", "xxl") {flex-basis: 200px; padding-right: 30px;}
+         @include screen("md", "lg") {flex-basis: 150px; padding-right: 20px;}
+         @include screen("sm", "sm") {flex-basis: 100px; padding-right: 10px;}
+         @include screen("xs", "xs") {flex-basis: 50px; padding-right: 10px;}
+
+         .image {
+            padding-top: 100%;
+            position: relative;
+
+            img {
+               position: absolute;
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               border-radius: 50%;
+               object-fit: cover;
+
+               @include circle-outline(color('primary'));
+            }
+         }
+
+         .text-small {
+            @include screen("xs", "xs") {
+               max-width: 50px;
+               word-wrap: break-word;
+            }
+
+         }
+
+         .line {
+            height: 1px;
+            background-color: color('font-dark');
+         }
+      }
+
+      .post-col {
+         .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            .text-subheader {
+               display: flex;
+               align-items: center;
+            }
+
+            .star {
+               color: color('success');
+            }
+         }
+
+         .text {
+            margin-bottom: 15px;
+         }
+
+         .flex-right a {
+            margin-left: 5px;
+            margin-bottom: 5px;
+         }
+      }
+   }
+}

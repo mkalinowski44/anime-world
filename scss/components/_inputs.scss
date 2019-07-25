@@ -1,10 +1,26 @@
-textarea.materialize-textarea:focus:not([readonly]) {
+textarea.materialize-textarea:focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]) {
    box-shadow: 0 1px 0 0 color('primary');
+   border-bottom: 1px solid color('primary');
 }
-textarea.materialize-textarea:focus:not([readonly]) + label {
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label {
    color: color('primary');
+}
+
+[type=checkbox]:checked + span:not(.lever):before {
+   border-right: 2px solid color('primary');
+   border-bottom: 2px solid color('primary');
 }
 
 .btn-small {
    border-radius: 20px;
+}
+
+.btn-large {
+   box-shadow: $shadow-button-light;
 }

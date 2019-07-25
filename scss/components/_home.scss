@@ -1,0 +1,207 @@
+.categories-grid {
+   display: grid;
+   grid-gap: 5px;
+
+   @include screen("xxl", "xxl") {
+      grid-template-columns: repeat(4, 1fr);
+   }
+   @include screen("lg", "xl") {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+   @include screen("md", "md") {
+      grid-template-columns: 1fr 1fr;
+   }
+   @include screen("xs", "sm") {
+      grid-template-columns: 1fr;
+   }
+
+   .category {
+      display: flex;
+      background-color: color('background-light');
+      align-items: center;
+      padding: 12px;
+      @include text-subheader();
+      color: color('font-dark');
+      position: relative;
+
+      i {
+         font-size: 26px;
+         margin-right: 12px;
+      }
+
+      .background {
+         position: absolute;
+         z-index: 0;
+         background-color: color('dark-transparent2');
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         will-change: transform;
+         transition: opacity .2s linear;
+         opacity: 0;
+      }
+
+      &:hover .background {
+         opacity: 1;
+      }
+   }
+}
+
+.ranking {
+   margin-top: 50px;
+   text-align: center;
+
+   @include screen("xl", "xxl") {
+      padding: 0 50px;
+   }
+   @include screen("md", "lg") {
+      padding: 0 25px;
+   }
+   @include screen("xs", "sm") {
+      padding: 0 15px;
+   }
+
+   .pos1 {
+      width: 50%;
+      position: relative;
+      left: 25%;
+      margin-top: 30px;
+   }
+
+   .pos2 {
+      width: 40%;
+      margin-top: 20px;
+   }
+
+   .pos3 {
+      width: 30%;
+      position: relative;
+      left: 70%;
+      margin-top: -20%;
+   }
+
+   .image {
+      widows: 100%;
+      padding-top: 100%;
+      position: relative;
+
+      img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border-radius: 50%;
+         object-fit: cover;
+         @include circle-outline(color('primary'), 5px);
+         will-change: transform;
+         transition: transform .2s ease-out;
+
+         &:hover {
+            transform: scale(1.1);
+         }
+      }
+   }
+
+   .text-small-header {
+      margin-top: 10px;
+      width: 200%;
+      position: relative;
+      left: -50%;
+   }
+}
+
+.movie-grid {
+   display: grid;
+   @include screen("xs", "xs") {
+      grid-template-columns: 1fr;
+   }
+   @include screen("sm", "sm") {
+      grid-template-columns: 1fr 1fr;
+   }
+   @include screen("md", "md") {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+   @include screen("lg", "xxl") {
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   grid-gap: 20px;
+
+   .movie-card {
+      padding: 0;
+   }
+}
+
+
+.movie-card {
+   padding: 0 10px;
+   .image, .text-subheader, .categories {
+      margin-bottom: 10px;
+   }
+
+   .text-subheader {
+      display: block;
+      color: color('font-dark');
+   }
+
+   .image {
+      display: block;
+      width: 100%;
+      padding-top: 65%;
+      position: relative;
+      cursor: pointer;
+
+      img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border-radius: 10px;
+         object-fit: cover;
+         z-index: 0;
+      }
+
+      .background {
+         z-index: 1;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border-radius: 10px;
+         background-color: color('dark-transparent');
+         color: color('font-light');
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         will-change: transform;
+         transition: opacity .2s linear;
+         opacity: 0;
+
+         i {
+            font-size: 40px;
+         }
+      }
+
+      &:hover .background {
+         opacity: 1;
+      }
+   }
+
+   .desc {
+      height: 14em;
+      display: block;
+      display: -webkit-box;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      overflow: hidden !important;
+   }
+
+   .btn-large {
+      width: 100%;
+      margin-bottom: 10px;
+   }
+}
