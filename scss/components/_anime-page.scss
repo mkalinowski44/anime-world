@@ -57,6 +57,15 @@
                   margin-right: 5px;
                }
             }
+
+            .more {
+               align-self: flex-end;
+               i {
+                  margin: 0 0 0 15px;
+                  will-change: transform;
+                  transition: transform .3s ease-out;
+               }
+            }
          }
 
          .collapsible-body {
@@ -68,6 +77,10 @@
 
             &:before {
                opacity: 1;
+            }
+
+            .more i {
+               transform: rotate(180deg);
             }
          }
       }

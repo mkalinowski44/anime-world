@@ -23,4 +23,8 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
 
 .btn-large {
    box-shadow: $shadow-button-light;
+
+   &:hover {
+      box-shadow: $shadow-button-hover-light;
+   }
 }

@@ -10964,6 +10964,10 @@ body::-webkit-scrollbar-thumb:hover {
   margin-top: 15px;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .menu-hamburger {
   width: 70px;
   height: 70px;
@@ -12625,6 +12629,9 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
 .btn-large {
   box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
 }
+.btn-large:hover {
+  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+}
 
 .categories-grid {
   display: grid;
@@ -13007,6 +13014,18 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
   color: #F25D5D;
   margin-right: 5px;
 }
+.characters .collapsible li .collapsible-header .more {
+  -webkit-align-self: flex-end;
+          align-self: flex-end;
+}
+.characters .collapsible li .collapsible-header .more i {
+  margin: 0 0 0 15px;
+  will-change: transform;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+     -moz-transition: -moz-transform 0.3s ease-out;
+       -o-transition: -o-transform 0.3s ease-out;
+          transition: transform 0.3s ease-out;
+}
 .characters .collapsible li .collapsible-body {
   border-bottom: 1px solid #F4F4F4;
 }
@@ -13015,6 +13034,12 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
 }
 .characters .collapsible li.active .collapsible-header:before {
   opacity: 1;
+}
+.characters .collapsible li.active .collapsible-header .more i {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .comment:not(:last-child) {
