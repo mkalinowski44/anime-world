@@ -221,8 +221,6 @@ body.no-scroll .nav-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      overflow-y: auto;
-      overflow-x: hidden;
       box-shadow: $shadow-hard-light;
 
       @include screen("xxl", "xxl") {
@@ -240,6 +238,8 @@ body.no-scroll .nav-bar {
          height: 100%;
          color: color('font-light');
          padding-left: 15px;
+         overflow-y: auto;
+         overflow-x: hidden;
 
          @include screen("xxl", "xxl") {
             display: flex;
