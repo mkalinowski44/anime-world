@@ -165,7 +165,7 @@
                border-radius: 50%;
                object-fit: cover;
 
-               @include circle-outline(color('primary'));
+               @include circle-outline(color('primary'), 5px);
             }
          }
 

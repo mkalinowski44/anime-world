@@ -63,3 +63,55 @@ function onShowOnce(element, callback) {
 
    this.start();
 }
+
+function AnimeRate(element) {
+   this.stars = document.querySelectorAll(element + " .stars i");
+   this.savedStars = new Array();
+
+   this.updateStars = function(e) {
+      var rate = e.target.nthChild;
+      for(var i = 0; i < rate; i++) {
+         this.stars[i].innerHTML = 'star';
+      }
+      for(var i = 4; i >= rate; i--) {
+         this.stars[i].innerHTML = 'star_border';
+      }
+
+   }.bind(this);
+
+   this.resetStars = function() {
+      for(var i = 0; i < 5; i++) {
+         if(this.savedStars[i] === 1) {
+            this.stars[i].innerHTML = 'star';
+         } else {
+            this.stars[i].innerHTML = 'star_border';
+         }
+      }
+
+   }.bind(this);
+
+   this.saveStars = function() {
+      this.savedStars = new Array();
+      for(var i = 0; i < this.stars.length; i++) {
+         var rate = this.stars[i].innerText === 'star' ? 1 : 0;
+         this.savedStars.push(rate);
+      }
+   }.bind(this);
+
+   this.init = function() {
+      this.saveStars();
+
+      for(var i = 0; i < this.stars.length; i++) {
+         this.stars[i].nthChild = i + 1;
+         this.stars[i].addEventListener("mouseenter", this.updateStars);
+         this.stars[i].addEventListener("mouseleave", this.resetStars);
+         this.stars[i].addEventListener("click", this.saveStars);
+      }
+   }.bind(this);
+
+   this.init();
+}
+
+if($('.anime-rate').length) {
+   var rate = new AnimeRate('.anime-rate');
+}

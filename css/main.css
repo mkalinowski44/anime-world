@@ -12632,11 +12632,15 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
   border-radius: 20px;
 }
 
-.btn-large {
-  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+.btn-large,
+.btn,
+.btn-small {
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.3);
 }
-.btn-large:hover {
-  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
+.btn-large:hover,
+.btn:hover,
+.btn-small:hover {
+  box-shadow: 0px 7px 14px -4px rgba(0, 0, 0, 0.3);
 }
 
 .categories-grid {
@@ -12906,7 +12910,7 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
 }
 .movie-card .btn-large {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .characters .collapsible {
@@ -13384,6 +13388,40 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
   height: 100%;
 }
 
+.anime-rate .stars {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+}
+.anime-rate .stars i {
+  display: block;
+  width: 34px;
+  height: 34px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+.anime-rate .stars i:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  will-change: transform;
+  -webkit-transition: opacity 0.2s linear;
+     -moz-transition: opacity 0.2s linear;
+       -o-transition: opacity 0.2s linear;
+          transition: opacity 0.2s linear;
+  opacity: 0;
+  z-index: -1;
+}
+.anime-rate .stars i:hover:before {
+  opacity: 1;
+}
+
 .sidebar-subjects {
   list-style: none;
   margin: 0;
@@ -13741,7 +13779,7 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 2px solid transparent;
+  border: 5px solid transparent;
   box-shadow: 0 0 0 2px #2196F3;
 }
 @media (max-width: 479px) {
