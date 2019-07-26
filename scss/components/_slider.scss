@@ -1,6 +1,11 @@
 .slick-slider {
    position: relative;
 
+   &:not(.col-slider) {
+
+   overflow: hidden;
+   }
+
    .background, .content {
       position: absolute;
       top: 0;
@@ -63,6 +68,17 @@
                .text-normal {
                   font-size: 12px;
                }
+            }
+
+            .bg {
+               background-color: color('font-light');
+               color: color('font-dark');
+               padding: 10px;
+               display: inline-block;
+               text-shadow: none;
+               position: relative;
+               top: -10px;
+               left: -10px;
             }
          }
 
