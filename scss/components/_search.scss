@@ -83,6 +83,7 @@
       .search-dropdown-container {
          position: absolute;
          height: 170px * 3 + 12px;
+         max-height: calc(100vh - 70px);
          width: 100%;
          overflow: hidden;
          padding-bottom: 12px;

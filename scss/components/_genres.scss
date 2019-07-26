@@ -1,6 +1,12 @@
 // genres
 .genre {
    display: flex;
+   &:not(:last-child) {
+      padding-bottom: 50px;
+      border-bottom: 1px solid color('background-light');
+      margin-bottom: 50px;
+   }
+
    @include screen("xs", "sm") {
       flex-direction: column;
    }

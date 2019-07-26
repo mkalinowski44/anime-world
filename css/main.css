@@ -11777,6 +11777,9 @@ body.no-scroll .nav-bar {
 .home-search form .search-dropdown-container {
   position: absolute;
   height: 522px;
+  max-height: -webkit-calc(100vh - 70px);
+  max-height: -moz-calc(100vh - 70px);
+  max-height: calc(100vh - 70px);
   width: 100%;
   overflow: hidden;
   padding-bottom: 12px;
@@ -13784,6 +13787,11 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
   display: -webkit-flex;
   display: -moz-box;
   display: flex;
+}
+.genre:not(:last-child) {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #F4F4F4;
+  margin-bottom: 50px;
 }
 @media (max-width: 479px) {
   .genre {
