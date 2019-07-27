@@ -582,9 +582,14 @@ body::-webkit-scrollbar-thumb:hover {
    display: flex;
    justify-content: space-between;
    align-items: flex-end;
+   flex-wrap: wrap;
 
    button {
       margin-top: 15px;
+   }
+
+   img {
+      max-width: 100%;
    }
 }
 

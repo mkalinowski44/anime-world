@@ -10977,9 +10977,14 @@ body::-webkit-scrollbar-thumb:hover {
   -webkit-align-items: flex-end;
      -moz-box-align: end;
           align-items: flex-end;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .contact-send-row button {
   margin-top: 15px;
+}
+.contact-send-row img {
+  max-width: 100%;
 }
 
 .w-100 {
