@@ -428,11 +428,22 @@ body::-webkit-scrollbar-thumb:hover {
    justify-content: space-between;
 
    a {
+
       &:first-child {
          padding-left: 15px;
       }
       &:last-child {
          padding-right: 15px;
+      }
+
+
+      @include screen("xs", "sm") {
+         font-size: 0;
+         padding: 0 10px !important;
+
+         i {
+            margin: 0;
+         }
       }
    }
 }

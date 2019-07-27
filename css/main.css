@@ -10758,6 +10758,24 @@ body::-webkit-scrollbar-thumb:hover {
 .player-pagination a:last-child {
   padding-right: 15px;
 }
+@media (max-width: 479px) {
+  .player-pagination a {
+    font-size: 0;
+    padding: 0 10px !important;
+  }
+  .player-pagination a i {
+    margin: 0;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .player-pagination a {
+    font-size: 0;
+    padding: 0 10px !important;
+  }
+  .player-pagination a i {
+    margin: 0;
+  }
+}
 
 .tabs {
   background-color: rgba(255, 255, 255, 0.05);
@@ -14424,6 +14442,10 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
 }
 .ranking-list .item.character .image .image-container img {
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 2px #2196F3;
 }
 .ranking-list .item.character:nth-child(2) .image {
   -webkit-flex-basis: 140px;
