@@ -236,7 +236,7 @@ body.no-scroll .recent-post-header-container .recent-post-header {
    @include screen("xxl", "xxl") {
       right: calc(-10vw + 10px);
    }
-   @include screen("xs", "xl") {
+   @include screen("lg", "xl") {
       padding-right: 10px;
    }
 }

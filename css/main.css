@@ -9859,21 +9859,6 @@ input[type=range]::-ms-thumb {
     right: calc(-10vw + 10px);
   }
 }
-@media (max-width: 479px) {
-  body.no-scroll .recent-post-header-container .recent-post-header {
-    padding-right: 10px;
-  }
-}
-@media (min-width: 480px) and (max-width: 767px) {
-  body.no-scroll .recent-post-header-container .recent-post-header {
-    padding-right: 10px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  body.no-scroll .recent-post-header-container .recent-post-header {
-    padding-right: 10px;
-  }
-}
 @media (min-width: 1024px) and (max-width: 1199px) {
   body.no-scroll .recent-post-header-container .recent-post-header {
     padding-right: 10px;
@@ -9936,7 +9921,21 @@ body {
 }
 body.no-scroll {
   overflow: hidden;
-  padding-right: 10px;
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  body.no-scroll {
+    padding-right: 10px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1499px) {
+  body.no-scroll {
+    padding-right: 10px;
+  }
+}
+@media (min-width: 1500px) {
+  body.no-scroll {
+    padding-right: 10px;
+  }
 }
 
 body::-webkit-scrollbar {
@@ -11250,8 +11249,22 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body.no-scroll .nav-bar {
-  padding-right: 10px;
   pointer-events: none;
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  body.no-scroll .nav-bar {
+    padding-right: 10px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1499px) {
+  body.no-scroll .nav-bar {
+    padding-right: 10px;
+  }
+}
+@media (min-width: 1500px) {
+  body.no-scroll .nav-bar {
+    padding-right: 10px;
+  }
 }
 
 .nav-container {
@@ -12281,6 +12294,15 @@ body.no-scroll .nav-bar {
   }
   .slick-slider .content .slider-site .text .text-normal {
     font-size: 12px;
+    max-height: 220px;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+  }
+  .slick-slider .content .slider-site .text .text-normal.bg {
+    max-height: 240px;
   }
 }
 .slick-slider .content .slider-site .text .bg {

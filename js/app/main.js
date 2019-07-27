@@ -22,3 +22,16 @@ function WindowScroll() {
 }
 
 var windowScroll = new WindowScroll();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.modal');
+   var instances = M.Modal.init(elems, {
+      onOpenStart: function() {
+         document.querySelector('body').classList.add('no-scroll');
+      },
+      onCloseEnd: function() {
+         document.querySelector('body').classList.remove('no-scroll');
+      }
+   });
+});

@@ -13,7 +13,9 @@ body {
 
    &.no-scroll {
       overflow: hidden;
-      padding-right: 10px;
+      @include screen("lg", "xxl") {
+         padding-right: 10px;
+      }
    }
 }
 
