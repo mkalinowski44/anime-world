@@ -11414,6 +11414,7 @@ body.no-scroll .nav-bar {
   font-size: 72px;
   text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.3);
   line-height: 100%;
+  padding-right: 15px;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .nav-container .navigation .navigation-content .logo {
@@ -11471,6 +11472,10 @@ body.no-scroll .nav-bar {
   .nav-container .navigation .navigation-content .logo {
     margin-bottom: 40px;
   }
+}
+.nav-container .navigation .navigation-content .logo img {
+  width: 350px;
+  max-width: 100%;
 }
 .nav-container .navigation .navigation-content .nav-list {
   list-style: none;
@@ -14308,6 +14313,8 @@ input[type=password]:not(.browser-default):focus:not([readonly]) + label {
   left: 0;
   position: absolute;
   border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .ranking-list .item .information div:not(:last-child) {
   margin-bottom: 5px;

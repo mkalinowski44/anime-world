@@ -255,6 +255,7 @@ body.no-scroll .nav-bar {
             font-size: 72px;
             text-shadow: $shadow-font-light;
             line-height: 100%;
+            padding-right: 15px;
 
             @include screen("md", "xxl") {
                transform: skew(10deg);
@@ -262,6 +263,11 @@ body.no-scroll .nav-bar {
 
             @include screen("xs", "xl") {
                margin-bottom: 40px;
+            }
+
+            img {
+               width: 350px;
+               max-width: 100%;
             }
          }
 
